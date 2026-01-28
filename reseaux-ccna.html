@@ -1,0 +1,1309 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>NetAcademy — Certification CCNA Cisco</title>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="css/navbar.css">
+	<style>
+		:root {
+			--cisco-blue: #049fd9;
+			--cisco-blue-dark: #0073a8;
+			--network-gray: #1d252c;
+			--network-gray-light: #2d3747;
+			--text-primary: #1a1f36;
+			--text-secondary: #4a5568;
+			--text-tertiary: #718096;
+			--bg-primary: #ffffff;
+			--bg-secondary: #f7f9fc;
+			--bg-tertiary: #edf2f7;
+			--accent-green: #00b894;
+			--accent-red: #e53e3e;
+			--border-color: #e2e8f0;
+			--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+			--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+			--shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+			/* Mapping pour la navbar */
+			--primary-color: var(--cisco-blue);
+			--accent-color: var(--cisco-blue-dark);
+			--light-color: var(--bg-secondary);
+			--transition: all 0.3s ease;
+		}
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		html, body {
+			height: 100%;
+			font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+			background-color: var(--bg-primary);
+			color: var(--text-primary);
+			line-height: 1.6;
+			scroll-behavior: smooth;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 24px;
+		}
+
+		/* Hero Section */
+		.hero {
+			padding: 160px 0 100px;
+			background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.hero::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 40%;
+			height: 100%;
+			background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Q50,80 0,100 Z" fill="%23049fd9" opacity="0.03"/></svg>');
+			background-size: cover;
+		}
+
+		.hero-content {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 60px;
+			align-items: center;
+		}
+
+		.hero-text h1 {
+			font-size: 48px;
+			line-height: 1.2;
+			margin-bottom: 24px;
+			color: var(--network-gray);
+		}
+
+		.hero-text h1 span {
+			color: var(--cisco-blue);
+			position: relative;
+		}
+
+		.hero-text h1 span::after {
+			content: '';
+			position: absolute;
+			bottom: 5px;
+			left: 0;
+			width: 100%;
+			height: 8px;
+			background: rgba(4, 159, 217, 0.1);
+			z-index: -1;
+		}
+
+		.hero-text p {
+			font-size: 18px;
+			color: var(--text-secondary);
+			margin-bottom: 32px;
+			max-width: 90%;
+		}
+
+		.button-group {
+			display: flex;
+			gap: 16px;
+			margin-bottom: 48px;
+		}
+
+		.btn-primary {
+			background: var(--cisco-blue);
+			color: white;
+			padding: 14px 32px;
+			border-radius: 6px;
+			font-weight: 600;
+			font-size: 16px;
+			text-decoration: none;
+			transition: all 0.3s;
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.btn-primary:hover {
+			background: var(--cisco-blue-dark);
+			transform: translateY(-2px);
+			box-shadow: var(--shadow-lg);
+		}
+
+		.btn-secondary {
+			background: white;
+			color: var(--cisco-blue);
+			padding: 14px 32px;
+			border-radius: 6px;
+			font-weight: 600;
+			font-size: 16px;
+			text-decoration: none;
+			transition: all 0.3s;
+			border: 2px solid var(--cisco-blue);
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.btn-secondary:hover {
+			background: var(--bg-tertiary);
+			transform: translateY(-2px);
+		}
+
+		.stats-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 24px;
+		}
+
+		.stat-item {
+			background: white;
+			padding: 20px;
+			border-radius: 8px;
+			border: 1px solid var(--border-color);
+			text-align: center;
+			transition: all 0.3s;
+		}
+
+		.stat-item:hover {
+			transform: translateY(-4px);
+			border-color: var(--cisco-blue);
+			box-shadow: var(--shadow-md);
+		}
+
+		.stat-number {
+			font-size: 32px;
+			font-weight: 700;
+			color: var(--cisco-blue);
+			margin-bottom: 4px;
+			font-family: 'IBM Plex Mono', monospace;
+		}
+
+		.stat-label {
+			font-size: 14px;
+			color: var(--text-tertiary);
+			font-weight: 500;
+		}
+
+		.hero-visual {
+			position: relative;
+		}
+
+		.network-diagram {
+			background: white;
+			border-radius: 12px;
+			padding: 32px;
+			box-shadow: var(--shadow-lg);
+			border: 1px solid var(--border-color);
+		}
+
+		.diagram-header {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			margin-bottom: 24px;
+			padding-bottom: 16px;
+			border-bottom: 2px solid var(--bg-tertiary);
+		}
+
+		.diagram-icon {
+			width: 40px;
+			height: 40px;
+			background: var(--cisco-blue);
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-size: 20px;
+		}
+
+		.diagram-title {
+			font-weight: 600;
+			color: var(--network-gray);
+		}
+
+		.diagram-nodes {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 16px;
+			margin-bottom: 24px;
+		}
+
+		.node {
+			background: var(--bg-tertiary);
+			padding: 16px;
+			border-radius: 8px;
+			text-align: center;
+			font-family: 'IBM Plex Mono', monospace;
+			font-size: 13px;
+			color: var(--network-gray-light);
+			border: 1px solid var(--border-color);
+			transition: all 0.3s;
+		}
+
+		.node:hover {
+			background: var(--cisco-blue);
+			color: white;
+			transform: scale(1.05);
+		}
+
+		.diagram-lines {
+			position: relative;
+			height: 40px;
+			margin: 20px 0;
+		}
+
+		.line {
+			position: absolute;
+			height: 2px;
+			background: var(--cisco-blue);
+			animation: pulseLine 2s infinite;
+		}
+
+		.line-1 { width: 100%; top: 10px; animation-delay: 0s; }
+		.line-2 { width: 80%; top: 20px; animation-delay: 0.5s; }
+		.line-3 { width: 60%; top: 30px; animation-delay: 1s; }
+
+		@keyframes pulseLine {
+			0%, 100% { opacity: 0.3; }
+			50% { opacity: 1; }
+		}
+
+		/* Formations */
+		.section {
+			padding: 100px 0;
+		}
+
+		.section-title {
+			text-align: center;
+			margin-bottom: 60px;
+		}
+
+		.section-title h2 {
+			font-size: 36px;
+			color: var(--network-gray);
+			margin-bottom: 16px;
+		}
+
+		.section-title p {
+			color: var(--text-secondary);
+			max-width: 600px;
+			margin: 0 auto;
+			font-size: 18px;
+		}
+
+		.courses-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 32px;
+		}
+
+		.course-card {
+			background: white;
+			border-radius: 12px;
+			overflow: hidden;
+			border: 1px solid var(--border-color);
+			transition: all 0.3s;
+			position: relative;
+		}
+
+		.course-card:hover {
+			transform: translateY(-8px);
+			box-shadow: var(--shadow-lg);
+			border-color: var(--cisco-blue);
+		}
+
+		.course-card::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 4px;
+			background: var(--cisco-blue);
+		}
+
+		.course-header {
+			padding: 32px 32px 24px;
+		}
+
+		.course-icon {
+			width: 56px;
+			height: 56px;
+			background: var(--bg-tertiary);
+			border-radius: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 20px;
+			font-size: 24px;
+		}
+
+		.course-card h3 {
+			font-size: 20px;
+			color: var(--network-gray);
+			margin-bottom: 12px;
+		}
+
+		.course-card p {
+			color: var(--text-secondary);
+			font-size: 15px;
+			line-height: 1.6;
+			margin-bottom: 20px;
+		}
+
+		.course-level {
+			display: inline-block;
+			padding: 6px 12px;
+			background: var(--bg-tertiary);
+			color: var(--text-secondary);
+			border-radius: 20px;
+			font-size: 12px;
+			font-weight: 600;
+		}
+
+		.course-footer {
+			padding: 20px 32px;
+			border-top: 1px solid var(--border-color);
+			background: var(--bg-secondary);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.course-duration {
+			font-size: 14px;
+			color: var(--text-tertiary);
+			display: flex;
+			align-items: center;
+			gap: 6px;
+		}
+
+		.course-link {
+			color: var(--cisco-blue);
+			font-weight: 600;
+			font-size: 14px;
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+			gap: 4px;
+			transition: gap 0.2s;
+		}
+
+		.course-link:hover {
+			gap: 8px;
+		}
+
+		/* Certifications */
+		.certifications {
+			background: var(--network-gray);
+			color: white;
+		}
+
+		.certifications .section-title h2,
+		.certifications .section-title p {
+			color: white;
+		}
+
+		.certifications .section-title p {
+			opacity: 0.9;
+		}
+
+		.cert-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 40px;
+			align-items: center;
+		}
+
+		.cert-badge {
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 20px;
+			padding: 40px;
+			text-align: center;
+			border: 1px solid rgba(255, 255, 255, 0.2);
+		}
+
+		.badge-icon {
+			width: 80px;
+			height: 80px;
+			background: var(--cisco-blue);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto 24px;
+			font-size: 32px;
+		}
+
+		.badge-title {
+			font-size: 24px;
+			margin-bottom: 12px;
+			font-weight: 600;
+		}
+
+		.badge-desc {
+			opacity: 0.8;
+			margin-bottom: 24px;
+			line-height: 1.6;
+		}
+
+		.cert-benefits {
+			display: grid;
+			gap: 20px;
+		}
+
+		.benefit-item {
+			display: flex;
+			align-items: flex-start;
+			gap: 16px;
+		}
+
+		.benefit-icon {
+			width: 40px;
+			height: 40px;
+			background: var(--cisco-blue);
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+		}
+
+		.benefit-content h4 {
+			font-size: 18px;
+			margin-bottom: 4px;
+		}
+
+		.benefit-content p {
+			opacity: 0.8;
+			font-size: 14px;
+		}
+
+		/* Timeline */
+		.timeline {
+			position: relative;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.timeline::before {
+			content: '';
+			position: absolute;
+			left: 30px;
+			top: 0;
+			bottom: 0;
+			width: 2px;
+			background: var(--border-color);
+		}
+
+		.timeline-item {
+			display: flex;
+			margin-bottom: 40px;
+			position: relative;
+		}
+
+		.timeline-marker {
+			width: 60px;
+			height: 60px;
+			background: white;
+			border: 2px solid var(--cisco-blue);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 700;
+			color: var(--cisco-blue);
+			flex-shrink: 0;
+			position: relative;
+			z-index: 2;
+		}
+
+		.timeline-content {
+			flex: 1;
+			padding-left: 32px;
+			padding-top: 8px;
+		}
+
+		.timeline-content h4 {
+			font-size: 18px;
+			color: var(--network-gray);
+			margin-bottom: 8px;
+		}
+
+		.timeline-content p {
+			color: var(--text-secondary);
+			font-size: 15px;
+		}
+
+		/* Testimonials */
+		.testimonials-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 32px;
+		}
+
+		.testimonial-card {
+			background: white;
+			padding: 32px;
+			border-radius: 12px;
+			border: 1px solid var(--border-color);
+			position: relative;
+		}
+
+		.testimonial-card::before {
+			content: '"';
+			position: absolute;
+			top: 20px;
+			right: 32px;
+			font-size: 80px;
+			color: var(--cisco-blue);
+			opacity: 0.1;
+			font-family: serif;
+			line-height: 1;
+		}
+
+		.testimonial-text {
+			font-size: 15px;
+			color: var(--text-secondary);
+			line-height: 1.7;
+			margin-bottom: 24px;
+			font-style: italic;
+		}
+
+		.testimonial-author {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+		}
+
+		.author-avatar {
+			width: 48px;
+			height: 48px;
+			background: var(--cisco-blue);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-weight: 600;
+		}
+
+		.author-info h5 {
+			font-size: 16px;
+			color: var(--network-gray);
+			margin-bottom: 4px;
+		}
+
+		.author-info p {
+			font-size: 14px;
+			color: var(--text-tertiary);
+		}
+
+		/* CTA */
+		.cta-section {
+			background: linear-gradient(135deg, var(--cisco-blue) 0%, var(--cisco-blue-dark) 100%);
+			color: white;
+			padding: 80px 0;
+			text-align: center;
+		}
+
+		.cta-section h2 {
+			font-size: 36px;
+			margin-bottom: 16px;
+		}
+
+		.cta-section p {
+			font-size: 18px;
+			opacity: 0.9;
+			max-width: 600px;
+			margin: 0 auto 32px;
+		}
+
+		.cta-button-large {
+			background: white;
+			color: var(--cisco-blue);
+			padding: 16px 48px;
+			border-radius: 8px;
+			font-weight: 600;
+			font-size: 18px;
+			text-decoration: none;
+			display: inline-flex;
+			align-items: center;
+			gap: 12px;
+			transition: all 0.3s;
+		}
+
+		.cta-button-large:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+		}
+
+		/* Footer */
+		.footer {
+			background: var(--network-gray);
+			color: white;
+			padding: 60px 0 40px;
+		}
+
+		.footer-content {
+			display: grid;
+			grid-template-columns: 2fr 1fr 1fr;
+			gap: 60px;
+			margin-bottom: 40px;
+		}
+
+		.footer-logo {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			margin-bottom: 20px;
+		}
+
+		.footer-logo .logo-icon {
+			width: 32px;
+			height: 32px;
+			font-size: 16px;
+		}
+
+		.footer-logo .logo-text {
+			color: white;
+			font-size: 18px;
+		}
+
+		.footer-desc {
+			opacity: 0.8;
+			font-size: 14px;
+			line-height: 1.7;
+		}
+
+		.footer-links h4 {
+			font-size: 16px;
+			margin-bottom: 20px;
+			color: white;
+		}
+
+		.footer-links ul {
+			list-style: none;
+		}
+
+		.footer-links li {
+			margin-bottom: 12px;
+		}
+
+		.footer-links a {
+			color: rgba(255, 255, 255, 0.8);
+			text-decoration: none;
+			font-size: 14px;
+			transition: color 0.2s;
+		}
+
+		.footer-links a:hover {
+			color: var(--cisco-blue);
+		}
+
+		.footer-bottom {
+			padding-top: 40px;
+			border-top: 1px solid rgba(255, 255, 255, 0.1);
+			text-align: center;
+			font-size: 14px;
+			opacity: 0.8;
+		}
+
+		/* Responsive */
+		@media (max-width: 1024px) {
+			.hero-content {
+				grid-template-columns: 1fr;
+				gap: 40px;
+			}
+			
+			.courses-grid,
+			.testimonials-grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			
+			.cert-grid {
+				grid-template-columns: 1fr;
+				gap: 60px;
+			}
+			
+			.footer-content {
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.hero-text h1 {
+				font-size: 36px;
+			}
+			
+			.button-group {
+				flex-direction: column;
+			}
+			
+			.courses-grid,
+			.testimonials-grid {
+				grid-template-columns: 1fr;
+			}
+			
+			.stats-grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			
+			.footer-content {
+				grid-template-columns: 1fr;
+				gap: 40px;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.container {
+				padding: 0 16px;
+			}
+			
+			.hero {
+				padding: 120px 0 60px;
+			}
+			
+			.section {
+				padding: 60px 0;
+			}
+			
+			.stats-grid {
+				grid-template-columns: 1fr;
+			}
+			
+			.timeline::before {
+				left: 25px;
+			}
+			
+			.timeline-marker {
+				width: 50px;
+				height: 50px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- Header -->
+	<nav class="glass-nav">
+		<div class="container">
+			<a href="#" class="logo">
+				<div class="logo-icon">N</div>
+				<div class="logo-text">Net<span>Academy</span></div>
+			</a>
+
+			<div class="mobile-menu-btn">
+				<i class="fas fa-bars"></i>
+			</div>
+
+			<!-- Wrapper for mobile sliding effect -->
+			<div class="nav-content-wrapper">
+				<div class="nav-panel main-nav-panel">
+					<ul class="nav-links">
+						<li class="nav-item-with-dropdown" data-menu="formations">
+							<a href="#">Formations <i class="fas fa-chevron-down"></i></a>
+						</li>
+						<li><a href="#certifications">Certifications</a></li>
+						<li><a href="#parcours">Parcours</a></li>
+						<li><a href="#temoignages">Témoignages</a></li>
+						<li><a href="#inscription" class="nav-cta">Commencer</a></li>
+					</ul>
+				</div>
+
+				<div class="nav-panel sub-nav-panel">
+					<div class="mobile-back-button">
+						<i class="fas fa-chevron-left"></i> <span id="mobile-nav-title">Menu</span>
+					</div>
+					<div class="sub-nav-content">
+						<!-- Content injected by JS -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Desktop Mega Menu Container -->
+		<div class="dropdown-mega-menu">
+			<div class="dropdown-content-container">
+				<!-- Content injected by JS -->
+			</div>
+		</div>
+	</nav>
+
+	<!-- Hidden Data Panels for Dropdowns -->
+	<div id="formations-menu" class="dropdown-panel">
+		<div class="dropdown-column">
+			<div class="dropdown-title">Nos Formations</div>
+			<a href="#formations" class="dropdown-link">
+				<i class="fas fa-laptop-code"></i>
+				<div>
+					<span class="link-title">CCNA Fundamentals</span>
+					<span class="link-description">Bases réseaux & TCP/IP</span>
+				</div>
+			</a>
+			<a href="#" class="dropdown-link">
+				<i class="fas fa-network-wired"></i>
+				<div>
+					<span class="link-title">Routing & Switching</span>
+					<span class="link-description">Configuration Cisco avancée</span>
+				</div>
+			</a>
+			<a href="#" class="dropdown-link">
+				<i class="fas fa-shield-alt"></i>
+				<div>
+					<span class="link-title">Network Security</span>
+					<span class="link-description">Sécurisation des infrastructures</span>
+				</div>
+			</a>
+		</div>
+		<div class="dropdown-column">
+			<div class="dropdown-title">Ressources</div>
+			<a href="#" class="dropdown-link">
+				<i class="fas fa-file-alt"></i>
+				<div>
+					<span class="link-title">Documentation</span>
+					<span class="link-description">Guides et cheat sheets</span>
+				</div>
+			</a>
+			<a href="#" class="dropdown-link">
+				<i class="fas fa-flask"></i>
+				<div>
+					<span class="link-title">Labs Virtuels</span>
+					<span class="link-description">Pratiquez sur Packet Tracer</span>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<!-- Hero Section -->
+	<section class="hero">
+		<div class="container hero-content">
+			<div class="hero-text">
+				<h1>Devenez expert <span>réseaux Cisco</span> avec notre formation CCNA</h1>
+				<p>Acquérez les compétences techniques recherchées par les entreprises et obtenez votre certification CCNA avec l'accompagnement de nos experts réseaux.</p>
+				
+				<div class="button-group">
+					<a href="#inscription" class="btn-primary">
+						<span>Démarrer la formation</span>
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M5 12h14M12 5l7 7-7 7"/>
+						</svg>
+					</a>
+					<a href="#formations" class="btn-secondary">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+							<rect width="20" height="14" x="2" y="5" rx="2"/>
+						</svg>
+						<span>Voir le programme</span>
+					</a>
+				</div>
+				
+				<div class="stats-grid">
+					<div class="stat-item">
+						<div class="stat-number">2500+</div>
+						<div class="stat-label">Étudiants certifiés</div>
+					</div>
+					<div class="stat-item">
+						<div class="stat-number">94%</div>
+						<div class="stat-label">Taux de réussite</div>
+					</div>
+					<div class="stat-item">
+						<div class="stat-number">120h</div>
+						<div class="stat-label">Labs pratiques</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="hero-visual">
+				<div class="network-diagram">
+					<div class="diagram-header">
+						<div class="diagram-icon">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<circle cx="12" cy="12" r="3"/>
+								<path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+							</svg>
+						</div>
+						<div class="diagram-title">Simulation réseau CCNA</div>
+					</div>
+					
+					<div class="diagram-nodes">
+						<div class="node">Router-01</div>
+						<div class="node">Switch-01</div>
+						<div class="node">Firewall</div>
+					</div>
+					
+					<div class="diagram-lines">
+						<div class="line line-1"></div>
+						<div class="line line-2"></div>
+						<div class="line line-3"></div>
+					</div>
+					
+					<div class="diagram-nodes">
+						<div class="node">VLAN-10</div>
+						<div class="node">VLAN-20</div>
+						<div class="node">DMZ</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Formations -->
+	<section id="formations" class="section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Nos formations Cisco</h2>
+				<p>Des programmes complets adaptés à tous les niveaux, du débutant à l'expert en réseaux</p>
+			</div>
+			
+			<div class="courses-grid">
+				<div class="course-card">
+					<div class="course-header">
+						<div class="course-icon">🌐</div>
+						<h3>CCNA Fundamentals</h3>
+						<p>Maîtrisez les bases des réseaux, le modèle TCP/IP, l'adressage IP et les protocoles fondamentaux.</p>
+						<span class="course-level">NIVEAU DÉBUTANT</span>
+					</div>
+					<div class="course-footer">
+						<div class="course-duration">
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<circle cx="12" cy="12" r="10"/>
+								<polyline points="12 6 12 12 16 14"/>
+							</svg>
+							8 semaines
+						</div>
+						<a href="#" class="course-link">
+							Détails
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M5 12h14M12 5l7 7-7 7"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+				
+				<div class="course-card">
+					<div class="course-header">
+						<div class="course-icon">🔧</div>
+						<h3>Routing & Switching</h3>
+						<p>Apprenez la configuration avancée des routeurs et switchs Cisco avec les protocoles OSPF, EIGRP, VLAN.</p>
+						<span class="course-level">NIVEAU INTERMÉDIAIRE</span>
+					</div>
+					<div class="course-footer">
+						<div class="course-duration">
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<circle cx="12" cy="12" r="10"/>
+								<polyline points="12 6 12 12 16 14"/>
+							</svg>
+							10 semaines
+						</div>
+						<a href="#" class="course-link">
+							Détails
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M5 12h14M12 5l7 7-7 7"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+				
+				<div class="course-card">
+					<div class="course-header">
+						<div class="course-icon">🔐</div>
+						<h3>Network Security</h3>
+						<p>Sécurisez les infrastructures réseau avec les technologies firewall, VPN, ACL et les meilleures pratiques.</p>
+						<span class="course-level">NIVEAU AVANCÉ</span>
+					</div>
+					<div class="course-footer">
+						<div class="course-duration">
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<circle cx="12" cy="12" r="10"/>
+								<polyline points="12 6 12 12 16 14"/>
+							</svg>
+							12 semaines
+						</div>
+						<a href="#" class="course-link">
+							Détails
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M5 12h14M12 5l7 7-7 7"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Certifications -->
+	<section id="certifications" class="section certifications">
+		<div class="container">
+			<div class="section-title">
+				<h2>Certification CCNA Cisco</h2>
+				<p>Validez vos compétences avec la certification la plus reconnue dans l'industrie des réseaux</p>
+			</div>
+			
+			<div class="cert-grid">
+				<div class="cert-badge">
+					<div class="badge-icon">CCNA</div>
+					<div class="badge-title">Cisco Certified Network Associate</div>
+					<div class="badge-desc">La certification d'entrée de gamme Cisco qui valide les compétences d'installation, de configuration et de dépannage des réseaux.</div>
+					<button class="cta-button">En savoir plus</button>
+				</div>
+				
+				<div class="cert-benefits">
+					<div class="benefit-item">
+						<div class="benefit-icon">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+								<polyline points="22 4 12 14.01 9 11.01"/>
+							</svg>
+						</div>
+						<div class="benefit-content">
+							<h4>Reconnaissance mondiale</h4>
+							<p>Certification reconnue par toutes les entreprises du secteur IT</p>
+						</div>
+					</div>
+					
+					<div class="benefit-item">
+						<div class="benefit-icon">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+							</svg>
+						</div>
+						<div class="benefit-content">
+							<h4>Sécurité de l'emploi</h4>
+							<p>98% de nos étudiants trouvent un emploi dans les 6 mois</p>
+						</div>
+					</div>
+					
+					<div class="benefit-item">
+						<div class="benefit-icon">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<circle cx="12" cy="12" r="10"/>
+								<polyline points="12 6 12 12 16 14"/>
+							</svg>
+						</div>
+						<div class="benefit-content">
+							<h4>Accès permanent</h4>
+							<p>Accès à vie aux ressources et mises à jour du cours</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Parcours -->
+	<section id="parcours" class="section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Votre parcours vers la certification</h2>
+				<p>Un programme structuré en 4 étapes pour maîtriser toutes les compétences CCNA</p>
+			</div>
+			
+			<div class="timeline">
+				<div class="timeline-item">
+					<div class="timeline-marker">1</div>
+					<div class="timeline-content">
+						<h4>Fondamentaux réseaux</h4>
+						<p>Modèles OSI/TCP-IP, adressage IPv4/IPv6, sous-réseaux, câblage, topologies réseau</p>
+					</div>
+				</div>
+				
+				<div class="timeline-item">
+					<div class="timeline-marker">2</div>
+					<div class="timeline-content">
+						<h4>Configuration des équipements</h4>
+						<p>Routeurs et switchs Cisco, VLAN, trunking, spanning-tree, protocoles de routage</p>
+					</div>
+				</div>
+				
+				<div class="timeline-item">
+					<div class="timeline-marker">3</div>
+					<div class="timeline-content">
+						<h4>Sécurité et services</h4>
+						<p>ACL, NAT, DHCP, DNS, VPN, QoS, supervision réseau avec SNMP</p>
+					</div>
+				</div>
+				
+				<div class="timeline-item">
+					<div class="timeline-marker">4</div>
+					<div class="timeline-content">
+						<h4>Préparation à l'examen</h4>
+						<p>Examens blancs, simulations pratiques, revue des concepts clés, stratégie d'examen</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Témoignages -->
+	<section id="temoignages" class="section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Ils ont réussi leur CCNA</h2>
+				<p>Découvrez les témoignages de nos anciens étudiants maintenant professionnels en réseaux</p>
+			</div>
+			
+			<div class="testimonials-grid">
+				<div class="testimonial-card">
+					<div class="testimonial-text">
+						"Grâce à NetAcademy, j'ai obtenu mon CCNA en 3 mois seulement. Les labs pratiques étaient incroyablement réalistes et m'ont préparé parfaitement pour l'examen et mon travail actuel."
+					</div>
+					<div class="testimonial-author">
+						<div class="author-avatar">SM</div>
+						<div class="author-info">
+							<h5>Sarah Martin</h5>
+							<p>Ingénieure Réseau @Orange</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="testimonial-card">
+					<div class="testimonial-text">
+						"Les formateurs sont des experts du secteur toujours disponibles. Le programme est bien structuré et les supports de cours sont excellents. Je recommande à 100% !"
+					</div>
+					<div class="testimonial-author">
+						<div class="author-avatar">KB</div>
+						<div class="author-info">
+							<h5>Karim Benali</h5>
+							<p>Admin Réseau @Capgemini</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="testimonial-card">
+					<div class="testimonial-text">
+						"Après 10 ans dans le support, j'ai voulu évoluer vers les réseaux. NetAcademy m'a donné toutes les compétences nécessaires. Aujourd'hui je suis responsable infrastructure."
+					</div>
+					<div class="testimonial-author">
+						<div class="author-avatar">LC</div>
+						<div class="author-info">
+							<h5>Laura Chen</h5>
+							<p>Responsable Infrastructure @BNP</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section id="inscription" class="cta-section">
+		<div class="container">
+			<h2>Prêt à transformer votre carrière ?</h2>
+			<p>Rejoignez notre prochaine cohorte et bénéficiez d'un accompagnement personnalisé jusqu'à l'obtention de votre certification</p>
+			<a href="#" class="cta-button-large">
+				<span>S'inscrire maintenant</span>
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<path d="M5 12h14M12 5l7 7-7 7"/>
+				</svg>
+			</a>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<div class="footer-about">
+					<div class="footer-logo">
+						<div class="logo-icon">N</div>
+						<div class="logo-text">NetAcademy</div>
+					</div>
+					<p class="footer-desc">
+						NetAcademy est le leader français de la formation aux certifications Cisco. 
+						Nous accompagnons depuis 2015 des milliers de professionnels vers l'excellence en réseaux.
+					</p>
+				</div>
+				
+				<div class="footer-links">
+					<h4>Formations</h4>
+					<ul>
+						<li><a href="#">CCNA Fundamentals</a></li>
+						<li><a href="#">Routing & Switching</a></li>
+						<li><a href="#">Network Security</a></li>
+						<li><a href="#">Formation sur mesure</a></li>
+					</ul>
+				</div>
+				
+				<div class="footer-links">
+					<h4>Contact</h4>
+					<ul>
+						<li><a href="#">info@netacademy.fr</a></li>
+						<li><a href="#">01 23 45 67 89</a></li>
+						<li><a href="#">Eligibilité CPF</a></li>
+						<li><a href="#">Demande de brochure</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="footer-bottom">
+				<p>© 2024 NetAcademy — Tous droits réservés. Cisco et CCNA sont des marques déposées de Cisco Systems.</p>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		// Animation des statistiques
+		function animateStats() {
+			const stats = document.querySelectorAll('.stat-number');
+			stats.forEach(stat => {
+				const target = parseInt(stat.textContent);
+				let current = 0;
+				const increment = target / 50;
+				const timer = setInterval(() => {
+					current += increment;
+					if (current >= target) {
+						stat.textContent = target + (stat.textContent.includes('+') ? '+' : '');
+						clearInterval(timer);
+					} else {
+						stat.textContent = Math.floor(current);
+					}
+				}, 30);
+			});
+		}
+
+		// Observer pour déclencher l'animation
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					animateStats();
+					observer.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.5 });
+
+		observer.observe(document.querySelector('.hero'));
+
+		// Navigation fluide
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function(e) {
+				e.preventDefault();
+				const targetId = this.getAttribute('href');
+				if (targetId === '#') return;
+				
+				const targetElement = document.querySelector(targetId);
+				if (targetElement) {
+					window.scrollTo({
+						top: targetElement.offsetTop - 80,
+						behavior: 'smooth'
+					});
+				}
+			});
+		});
+
+		// Animation des nodes réseau
+		const nodes = document.querySelectorAll('.node');
+		nodes.forEach((node, index) => {
+			node.style.animationDelay = `${index * 0.2}s`;
+		});
+	</script>
+	<script src="js/navbar.js"></script>
+</body>
+</html>
