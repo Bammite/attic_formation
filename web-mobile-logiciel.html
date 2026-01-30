@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>NetAcademy — Formations Web, Mobile & Logiciel</title>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="css/navbar.css">
+	<style>
+		:root {
+			--dev-purple: #6c5ce7;
+			--dev-dark: #2d3436;
+			--dev-light: #dfe6e9;
+			--text-primary: #1a1f36;
+			--text-secondary: #4a5568;
+			--text-tertiary: #718096;
+			--bg-primary: #ffffff;
+			--bg-secondary: #f8f9fa;
+			--bg-tertiary: #edf2f7;
+			--border-color: #e2e8f0;
+			--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+			--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+			--shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+			/* Mapping pour la navbar */
+			--primary-color: var(--dev-purple);
+			--accent-color: #a29bfe;
+			--light-color: var(--bg-secondary);
+			--transition: all 0.3s ease;
+		}
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		html, body {
+			height: 100%;
+			font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+			background-color: var(--bg-primary);
+			color: var(--text-primary);
+			line-height: 1.6;
+			scroll-behavior: smooth;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 24px;
+		}
+
+		/* Hero Section */
+		.hero {
+			padding: 160px 0 100px;
+			background: linear-gradient(135deg, #fdfbf7 0%, #fff 100%);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.hero::before {
+			content: '';
+			position: absolute;
+			top: -50%;
+			right: -20%;
+			width: 80%;
+			height: 200%;
+			background: radial-gradient(circle, rgba(108, 92, 231, 0.05) 0%, rgba(255,255,255,0) 70%);
+			z-index: 0;
+		}
+
+		.hero-content {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 60px;
+			align-items: center;
+			position: relative;
+			z-index: 1;
+		}
+
+		.hero-text h1 {
+			font-size: 48px;
+			line-height: 1.2;
+			margin-bottom: 24px;
+			color: var(--dev-dark);
+		}
+
+		.hero-text h1 span {
+			color: var(--dev-purple);
+			position: relative;
+		}
+
+		.hero-text p {
+			font-size: 18px;
+			color: var(--text-secondary);
+			margin-bottom: 32px;
+			max-width: 90%;
+		}
+
+		.button-group {
+			display: flex;
+			gap: 16px;
+			margin-bottom: 48px;
+		}
+
+		.btn-primary {
+			background: var(--dev-purple);
+			color: white;
+			padding: 14px 32px;
+			border-radius: 6px;
+			font-weight: 600;
+			font-size: 16px;
+			text-decoration: none;
+			transition: all 0.3s;
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.btn-primary:hover {
+			background: #5649c0;
+			transform: translateY(-2px);
+			box-shadow: var(--shadow-lg);
+		}
+
+		.btn-secondary {
+			background: white;
+			color: var(--dev-purple);
+			padding: 14px 32px;
+			border-radius: 6px;
+			font-weight: 600;
+			font-size: 16px;
+			text-decoration: none;
+			transition: all 0.3s;
+			border: 2px solid var(--dev-purple);
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.btn-secondary:hover {
+			background: var(--bg-tertiary);
+			transform: translateY(-2px);
+		}
+
+		/* Visual Code Block */
+		.code-window {
+			background: #2d3436;
+			border-radius: 12px;
+			box-shadow: var(--shadow-lg);
+			overflow: hidden;
+			font-family: 'IBM Plex Mono', monospace;
+		}
+
+		.window-header {
+			background: #1e272e;
+			padding: 12px 16px;
+			display: flex;
+			gap: 8px;
+		}
+
+		.dot { width: 12px; height: 12px; border-radius: 50%; }
+		.red { background: #ff5f56; }
+		.yellow { background: #ffbd2e; }
+		.green { background: #27c93f; }
+
+		.window-body {
+			padding: 24px;
+			color: #dfe6e9;
+			font-size: 14px;
+			line-height: 1.8;
+		}
+
+		.keyword { color: #ff7675; }
+		.function { color: #74b9ff; }
+		.string { color: #55efc4; }
+		.comment { color: #636e72; font-style: italic; }
+
+		/* Sections */
+		.section { padding: 100px 0; }
+		.section-bg { background-color: var(--bg-secondary); }
+
+		.section-title {
+			text-align: center;
+			margin-bottom: 60px;
+		}
+
+		.section-title h2 {
+			font-size: 36px;
+			color: var(--dev-dark);
+			margin-bottom: 16px;
+		}
+
+		.section-title p {
+			color: var(--text-secondary);
+			max-width: 600px;
+			margin: 0 auto;
+			font-size: 18px;
+		}
+
+		/* Domain Cards */
+		.domain-card {
+			background: white;
+			border-radius: 16px;
+			padding: 40px;
+			margin-bottom: 40px;
+			border: 1px solid var(--border-color);
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 40px;
+			align-items: center;
+			transition: transform 0.3s;
+		}
+
+		.domain-card:hover {
+			transform: translateY(-5px);
+			box-shadow: var(--shadow-lg);
+			border-color: var(--dev-purple);
+		}
+
+		.domain-content h3 {
+			font-size: 28px;
+			color: var(--dev-dark);
+			margin-bottom: 16px;
+			display: flex;
+			align-items: center;
+			gap: 12px;
+		}
+
+		.domain-icon {
+			width: 48px;
+			height: 48px;
+			background: var(--bg-tertiary);
+			border-radius: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--dev-purple);
+			font-size: 24px;
+		}
+
+		.domain-importance {
+			margin-bottom: 24px;
+			color: var(--text-secondary);
+			font-size: 16px;
+		}
+
+		.tech-stack {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 12px;
+		}
+
+		.tech-badge {
+			background: var(--bg-tertiary);
+			padding: 8px 16px;
+			border-radius: 20px;
+			font-size: 14px;
+			font-weight: 600;
+			color: var(--dev-dark);
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.tech-badge i { color: var(--dev-purple); }
+
+		.methodology-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 32px;
+		}
+
+		.method-item {
+			text-align: center;
+			padding: 32px;
+			background: white;
+			border-radius: 12px;
+			box-shadow: var(--shadow-sm);
+		}
+
+		.method-icon {
+			width: 64px;
+			height: 64px;
+			background: linear-gradient(135deg, var(--dev-purple) 0%, #a29bfe 100%);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-size: 28px;
+			margin: 0 auto 24px;
+		}
+
+		/* Timeline (Parcours) - Reused from CCNA but adapted colors */
+		.timeline {
+			position: relative;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.timeline::before {
+			content: '';
+			position: absolute;
+			left: 30px;
+			top: 0;
+			bottom: 0;
+			width: 2px;
+			background: var(--border-color);
+		}
+
+		.timeline-item {
+			display: flex;
+			margin-bottom: 40px;
+			position: relative;
+		}
+
+		.timeline-marker {
+			width: 60px;
+			height: 60px;
+			background: white;
+			border: 2px solid var(--dev-purple);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 700;
+			color: var(--dev-purple);
+			flex-shrink: 0;
+			position: relative;
+			z-index: 2;
+		}
+
+		.timeline-content {
+			flex: 1;
+			padding-left: 32px;
+			padding-top: 8px;
+		}
+
+		/* CTA Section */
+		.cta-section {
+			background: linear-gradient(135deg, var(--dev-purple) 0%, #a29bfe 100%);
+			color: white;
+			padding: 80px 0;
+			text-align: center;
+		}
+
+		.cta-button-large {
+			background: white;
+			color: var(--dev-purple);
+			padding: 16px 48px;
+			border-radius: 8px;
+			font-weight: 600;
+			font-size: 18px;
+			text-decoration: none;
+			display: inline-flex;
+			align-items: center;
+			gap: 12px;
+			transition: all 0.3s;
+		}
+
+		.cta-button-large:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+		}
+
+		/* Footer (Reused) */
+		.footer {
+			background: var(--dev-dark);
+			color: white;
+			padding: 60px 0 40px;
+		}
+		/* ... Footer styles same as CCNA ... */
+		.footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
+		.footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+		.footer-logo .logo-icon { width: 32px; height: 32px; font-size: 16px; background: var(--dev-purple); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+		.footer-links ul { list-style: none; }
+		.footer-links li { margin-bottom: 12px; }
+		.footer-links a { color: rgba(255,255,255,0.8); text-decoration: none; }
+		.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; text-align: center; opacity: 0.8; }
+
+		@media (max-width: 768px) {
+			.hero-content { grid-template-columns: 1fr; }
+			.domain-card { grid-template-columns: 1fr; gap: 24px; }
+			.methodology-grid { grid-template-columns: 1fr; }
+			.footer-content { grid-template-columns: 1fr; }
+		}
+	</style>
+</head>
+<body>
+	<!-- Header -->
+	<nav class="glass-nav">
+		<div class="container">
+			<a href="./index.html" class="logo">
+				<div class="logo-icon">N</div>
+				<div class="logo-text">Net<span>Academy</span></div>
+			</a>
+
+			<div class="mobile-menu-btn">
+				<i class="fas fa-bars"></i>
+			</div>
+
+			<div class="nav-content-wrapper">
+				<div class="nav-panel main-nav-panel">
+					<ul class="nav-links">
+						<li class="nav-item-with-dropdown" data-menu="formations">
+							<a href="#">Formations <i class="fas fa-chevron-down"></i></a>
+						</li>
+						<li><a href="#methodologie">Méthodologie</a></li>
+						<li><a href="#parcours">Parcours</a></li>
+						<li><a href="#inscription" class="nav-cta">Commencer</a></li>
+					</ul>
+				</div>
+				<div class="nav-panel sub-nav-panel">
+					<div class="mobile-back-button">
+						<i class="fas fa-chevron-left"></i> <span id="mobile-nav-title">Menu</span>
+					</div>
+					<div class="sub-nav-content"></div>
+				</div>
+			</div>
+		</div>
+		<div class="dropdown-mega-menu">
+			<div class="dropdown-content-container"></div>
+		</div>
+	</nav>
+
+	<!-- Hidden Data Panels -->
+	<div id="formations-menu" class="dropdown-panel">
+		<div class="dropdown-column">
+			<div class="dropdown-title">Développement</div>
+			<a href="#web" class="dropdown-link">
+				<i class="fas fa-globe"></i>
+				<div><span class="link-title">Web Full-Stack</span><span class="link-description">React, Node.js, SQL</span></div>
+			</a>
+			<a href="#mobile" class="dropdown-link">
+				<i class="fas fa-mobile-alt"></i>
+				<div><span class="link-title">Mobile Apps</span><span class="link-description">Flutter, React Native</span></div>
+			</a>
+			<a href="#logiciel" class="dropdown-link">
+				<i class="fas fa-laptop-code"></i>
+				<div><span class="link-title">Génie Logiciel</span><span class="link-description">Python, Architecture</span></div>
+			</a>
+		</div>
+	</div>
+
+	<!-- Hero Section -->
+	<section class="hero">
+		<div class="container hero-content">
+			<div class="hero-text">
+				<h1>Maîtrisez le Code : <span>Web, Mobile & Logiciel</span></h1>
+				<p>Une formation intensive et complète pour devenir un développeur polyvalent, capable de concevoir des solutions numériques de A à Z.</p>
+				<div class="button-group">
+					<a href="#inscription" class="btn-primary">Démarrer la formation</a>
+					<a href="#domaines" class="btn-secondary">Découvrir les modules</a>
+				</div>
+			</div>
+			<div class="hero-visual">
+				<div class="code-window">
+					<div class="window-header">
+						<div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+					</div>
+					<div class="window-body">
+						<span class="keyword">class</span> <span class="function">Developer</span> {<br>
+						&nbsp;&nbsp;<span class="keyword">constructor</span>() {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.skills = [<span class="string">'Web'</span>, <span class="string">'Mobile'</span>, <span class="string">'Soft'</span>];<br>
+						&nbsp;&nbsp;}<br>
+						<br>
+						&nbsp;&nbsp;<span class="function">createFuture</span>() {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Building amazing things...</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">'Success'</span>;<br>
+						&nbsp;&nbsp;}<br>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Methodology Section -->
+	<section id="methodologie" class="section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Notre Méthodologie</h2>
+				<p>Apprendre à coder, c'est pratiquer. Notre approche pédagogique est basée sur le "Learning by Doing".</p>
+			</div>
+			<div class="methodology-grid">
+				<div class="method-item">
+					<div class="method-icon"><i class="fas fa-project-diagram"></i></div>
+					<h3>Projets Réels</h3>
+					<p>Pas de théorie inutile. Vous développez des clones d'applications populaires (Netflix, Uber) et des projets d'entreprise.</p>
+				</div>
+				<div class="method-item">
+					<div class="method-icon"><i class="fas fa-users-cog"></i></div>
+					<h3>Agile & Scrum</h3>
+					<p>Travaillez comme en entreprise. Daily meetings, sprints, et revues de code pour vous préparer au monde professionnel.</p>
+				</div>
+				<div class="method-item">
+					<div class="method-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+					<h3>Mentorat Expert</h3>
+					<p>Des développeurs seniors vous accompagnent, relisent votre code et vous guident vers les meilleures pratiques.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Domains Section -->
+	<section id="domaines" class="section section-bg">
+		<div class="container">
+			<div class="section-title">
+				<h2>3 Piliers de Compétences</h2>
+				<p>Un programme unifié pour une maîtrise totale de l'écosystème de développement.</p>
+			</div>
+
+			<!-- Web Session -->
+			<div id="web" class="domain-card">
+				<div class="domain-content">
+					<h3><div class="domain-icon"><i class="fas fa-globe"></i></div> Développement Web</h3>
+					<p class="domain-importance">Le web est la porte d'entrée du numérique. Maîtriser le Full-Stack vous permet de créer des plateformes SaaS, des sites e-commerce et des applications web complexes.</p>
+					<div class="tech-stack">
+						<span class="tech-badge"><i class="fab fa-html5"></i> HTML/CSS</span>
+						<span class="tech-badge"><i class="fab fa-js"></i> JavaScript</span>
+						<span class="tech-badge"><i class="fab fa-react"></i> React</span>
+						<span class="tech-badge"><i class="fab fa-node"></i> Node.js</span>
+					</div>
+				</div>
+				<div class="domain-image">
+					<img src="assets/image/developpeurs-frontend-backend.webp" alt="Web Dev" style="width:100%; border-radius:12px;">
+				</div>
+			</div>
+
+			<!-- Mobile Session -->
+			<div id="mobile" class="domain-card">
+				<div class="domain-image">
+					<img src="assets/image/banniere-developpement-applications_33099-1720.avif" alt="Mobile Dev" style="width:100%; border-radius:12px;">
+				</div>
+				<div class="domain-content">
+					<h3><div class="domain-icon"><i class="fas fa-mobile-alt"></i></div> Développement Mobile</h3>
+					<p class="domain-importance">Avec plus de 6 milliards de smartphones, le mobile est incontournable. Apprenez à créer des applications natives performantes pour iOS et Android.</p>
+					<div class="tech-stack">
+						<span class="tech-badge"><i class="fas fa-code"></i> Flutter</span>
+						<span class="tech-badge"><i class="fab fa-react"></i> React Native</span>
+						<span class="tech-badge"><i class="fab fa-apple"></i> iOS</span>
+						<span class="tech-badge"><i class="fab fa-android"></i> Android</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Logiciel Session -->
+			<div id="logiciel" class="domain-card">
+				<div class="domain-content">
+					<h3><div class="domain-icon"><i class="fas fa-cogs"></i></div> Génie Logiciel</h3>
+					<p class="domain-importance">Au-delà du code, l'architecture. Concevez des systèmes robustes, scalables et maintenables en utilisant les design patterns et l'automatisation.</p>
+					<div class="tech-stack">
+						<span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+						<span class="tech-badge"><i class="fas fa-database"></i> SQL</span>
+						<span class="tech-badge"><i class="fab fa-docker"></i> Docker</span>
+						<span class="tech-badge"><i class="fas fa-code-branch"></i> Git/CI-CD</span>
+					</div>
+				</div>
+				<div class="domain-image">
+					<img src="assets/image/software_engin.png" alt="Software Eng" style="width:100%; border-radius:12px;">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Parcours -->
+	<section id="parcours" class="section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Votre Parcours de Formation</h2>
+				<p>6 mois intensifs pour passer de débutant à développeur confirmé.</p>
+			</div>
+			<div class="timeline">
+				<div class="timeline-item">
+					<div class="timeline-marker">1</div>
+					<div class="timeline-content">
+						<h4>Fondamentaux & Algorithmique</h4>
+						<p>Logique de programmation, structures de données, et bases du web (HTML/CSS/JS).</p>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="timeline-marker">2</div>
+					<div class="timeline-content">
+						<h4>Spécialisation Front & Back</h4>
+						<p>Création d'interfaces dynamiques (React) et gestion serveur/base de données (Node/SQL).</p>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="timeline-marker">3</div>
+					<div class="timeline-content">
+						<h4>Écosystème Mobile & DevOps</h4>
+						<p>Adaptation mobile, déploiement continu, tests et conteneurisation.</p>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="timeline-marker">4</div>
+					<div class="timeline-content">
+						<h4>Projet Final & Carrière</h4>
+						<p>Réalisation d'un projet complexe en équipe et préparation aux entretiens techniques.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section id="inscription" class="cta-section">
+		<div class="container">
+			<h2>Prêt à coder votre avenir ?</h2>
+			<p>Les inscriptions pour la prochaine cohorte sont ouvertes. Places limitées.</p>
+			<a href="#" class="cta-button-large">S'inscrire maintenant</a>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<div class="footer-about">
+					<div class="footer-logo">
+						<div class="logo-icon">N</div>
+						<div class="logo-text">NetAcademy</div>
+					</div>
+					<p>Formations d'excellence en développement pour les créateurs de demain.</p>
+				</div>
+				<div class="footer-links">
+					<h4>Liens Rapides</h4>
+					<ul>
+						<li><a href="#web">Web Dev</a></li>
+						<li><a href="#mobile">Mobile Dev</a></li>
+						<li><a href="#logiciel">Génie Logiciel</a></li>
+					</ul>
+				</div>
+				<div class="footer-links">
+					<h4>Contact</h4>
+					<ul>
+						<li><a href="#">contact@netacademy.fr</a></li>
+						<li><a href="#">+33 1 23 45 67 89</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>© 2024 NetAcademy. Tous droits réservés.</p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="js/navbar.js"></script>
+</body>
+</html>

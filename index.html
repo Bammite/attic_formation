@@ -10,908 +10,11 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/index.css"> 
+    <link rel="stylesheet" href="css/contact.css">
     <style>
-        :root {
-            --primary-blue: #049fd9;
-            --primary-blue-dark: #0073a8;
-            --secondary-purple: #8a2be2;
-            --secondary-green: #00b894;
-            --network-gray: #1d252c;
-            --network-gray-light: #2d3747;
-            --text-primary: #1a1f36;
-            --text-secondary: #4a5568;
-            --text-tertiary: #718096;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f7f9fc;
-            --bg-tertiary: #edf2f7;
-            --accent-yellow: #ffd700;
-            --accent-red: #e53e3e;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-            
-            /* Mapping pour la navbar */
-            --primary-color: var(--primary-blue);
-            --accent-color: var(--secondary-purple);
-            --light-color: var(--bg-secondary);
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html,
-        body {
-            height: 100%;
-            font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 160px 0 100px;
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Q50,80 0,100 Z" fill="%23049fd9" opacity="0.03"/></svg>');
-            background-size: cover;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 48px;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            color: var(--network-gray);
-        }
-
-        .hero-text h1 span {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-        }
-
-        .hero-text h1 span::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background: rgba(4, 159, 217, 0.1);
-            z-index: -1;
-        }
-
-        .hero-text p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            max-width: 90%;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 48px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 16px;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: var(--primary-blue);
-            padding: 14px 32px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 16px;
-            text-decoration: none;
-            transition: all 0.3s;
-            border: 2px solid var(--primary-blue);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-secondary:hover {
-            background: var(--bg-tertiary);
-            transform: translateY(-2px);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .stat-item {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary-blue);
-            box-shadow: var(--shadow-md);
-        }
-
-        .stat-number {
-            font-size: 32px;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 4px;
-            font-family: 'IBM Plex Mono', monospace;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: var(--text-tertiary);
-            font-weight: 500;
-        }
-
-        .hero-visual {
-            position: relative;
-        }
-
-        .tech-diagram {
-            background: white;
-            border-radius: 12px;
-            padding: 32px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-        }
-
-        .diagram-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 24px;
-            padding-bottom: 16px;
-            border-bottom: 2px solid var(--bg-tertiary);
-        }
-
-        .diagram-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-        }
-
-        .diagram-title {
-            font-weight: 600;
-            color: var(--network-gray);
-        }
-
-        .diagram-tech {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .tech-item {
-            background: var(--bg-tertiary);
-            padding: 16px;
-            border-radius: 8px;
-            text-align: center;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 13px;
-            color: var(--network-gray-light);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s;
-        }
-
-        .tech-item:hover {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .diagram-lines {
-            position: relative;
-            height: 40px;
-            margin: 20px 0;
-        }
-
-        .line {
-            position: absolute;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
-            animation: pulseLine 2s infinite;
-        }
-
-        .line-1 {
-            width: 100%;
-            top: 10px;
-            animation-delay: 0s;
-        }
-
-        .line-2 {
-            width: 80%;
-            top: 20px;
-            animation-delay: 0.5s;
-        }
-
-        .line-3 {
-            width: 60%;
-            top: 30px;
-            animation-delay: 1s;
-        }
-
-        @keyframes pulseLine {
-
-            0%,
-            100% {
-                opacity: 0.3;
-            }
-
-            50% {
-                opacity: 1;
-            }
-        }
-
-        /* Grande Rentrée Section */
-        .grand-rentree {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .grand-rentree::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Q50,80 0,100 Z" fill="white" opacity="0.05"/></svg>');
-            background-size: cover;
-        }
-
-        .grand-rentree .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .grand-rentree h2 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
-
-        .grand-rentree p {
-            font-size: 20px;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-
-        .rentree-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .rentree-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 40px 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
-        }
-
-        .rentree-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        }
-
-        .rentree-icon {
-            width: 70px;
-            height: 70px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 32px;
-            color: var(--primary-blue);
-        }
-
-        .rentree-card h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
-        }
-
-        .rentree-card p {
-            font-size: 16px;
-            opacity: 0.9;
-            margin-bottom: 0;
-        }
-
-        /* Formations */
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--network-gray);
-            margin-bottom: 16px;
-        }
-
-        .section-title p {
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 18px;
-        }
-
-        .formation-detailed-item {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            margin-bottom: 80px;
-            padding: 40px;
-            background: white;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-md);
-        }
-
-        .formation-detailed-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .formation-content {
-            flex: 1;
-        }
-
-        .formation-image {
-            flex: 1;
-            height: 300px;
-            background: var(--bg-tertiary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-        }
-
-        .formation-modules {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin: 24px 0;
-        }
-
-        .module-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
-        .module-icon {
-            color: var(--primary-blue);
-            font-weight: bold;
-        }
-
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .course-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .course-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-blue);
-        }
-
-        .course-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
-        }
-
-        .course-header {
-            padding: 32px 32px 24px;
-        }
-
-        .course-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--bg-tertiary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .course-card h3 {
-            font-size: 20px;
-            color: var(--network-gray);
-            margin-bottom: 12px;
-        }
-
-        .course-card p {
-            color: var(--text-secondary);
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .course-level {
-            display: inline-block;
-            padding: 6px 12px;
-            background: var(--bg-tertiary);
-            color: var(--text-secondary);
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .course-footer {
-            padding: 20px 32px;
-            border-top: 1px solid var(--border-color);
-            background: var(--bg-secondary);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .course-duration {
-            font-size: 14px;
-            color: var(--text-tertiary);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .course-link {
-            color: var(--primary-blue);
-            font-weight: 600;
-            font-size: 14px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            transition: gap 0.2s;
-        }
-
-        .course-link:hover {
-            gap: 8px;
-        }
-
-        /* Parcours */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 30px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--primary-blue) 0%, var(--secondary-purple) 100%);
-        }
-
-        .timeline-item {
-            display: flex;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .timeline-marker {
-            width: 60px;
-            height: 60px;
-            background: white;
-            border: 2px solid var(--primary-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--primary-blue);
-            flex-shrink: 0;
-            position: relative;
-            z-index: 2;
-        }
-
-        .timeline-content {
-            flex: 1;
-            padding-left: 32px;
-            padding-top: 8px;
-        }
-
-        .timeline-content h4 {
-            font-size: 18px;
-            color: var(--network-gray);
-            margin-bottom: 8px;
-        }
-
-        .timeline-content p {
-            color: var(--text-secondary);
-            font-size: 15px;
-        }
-
-        /* Testimonials */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 32px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            right: 32px;
-            font-size: 80px;
-            color: var(--primary-blue);
-            opacity: 0.1;
-            font-family: serif;
-            line-height: 1;
-        }
-
-        .testimonial-text {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 24px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .author-avatar {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-        }
-
-        .author-info h5 {
-            font-size: 16px;
-            color: var(--network-gray);
-            margin-bottom: 4px;
-        }
-
-        .author-info p {
-            font-size: 14px;
-            color: var(--text-tertiary);
-        }
-
-        /* CTA */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 36px;
-            margin-bottom: 16px;
-        }
-
-        .cta-section p {
-            font-size: 18px;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 32px;
-        }
-
-        .cta-button-large {
-            background: white;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            padding: 16px 48px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 18px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-            background-clip: padding-box, border-box;
-            background-origin: border-box;
-            border-image: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%) 1;
-        }
-
-        .cta-button-large:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--network-gray);
-            color: white;
-            padding: 60px 0 40px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo .logo-icon {
-            width: 32px;
-            height: 32px;
-            font-size: 16px;
-        }
-
-        .footer-logo .logo-text {
-            color: white;
-            font-size: 18px;
-        }
-
-        .footer-desc {
-            opacity: 0.8;
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-        .footer-links h4 {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-blue);
-        }
-
-        .footer-bottom {
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            font-size: 14px;
-            opacity: 0.8;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .formation-detailed-item {
-                flex-direction: column !important;
-                gap: 30px;
-                padding: 30px;
-            }
-
-            .formation-image {
-                height: 200px;
-                width: 100%;
-            }
-
-            .formation-modules {
-                grid-template-columns: 1fr;
-            }
-
-            .courses-grid,
-            .testimonials-grid,
-            .rentree-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-text h1 {
-                font-size: 36px;
-            }
-
-            .button-group {
-                flex-direction: column;
-            }
-
-            .formation-detailed-item {
-                margin-bottom: 50px;
-                padding: 24px;
-            }
-
-            .formation-detailed-item h3 {
-                font-size: 22px;
-            }
-
-            .formation-image {
-                height: 150px;
-                font-size: 48px;
-            }
-
-            .courses-grid,
-            .testimonials-grid,
-            .rentree-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .grand-rentree h2 {
-                font-size: 32px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 16px;
-            }
-
-            .hero {
-                padding: 120px 0 60px;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline::before {
-                left: 25px;
-            }
-
-            .timeline-marker {
-                width: 50px;
-                height: 50px;
-            }
-
-            .grand-rentree {
-                padding: 60px 0;
-            }
-
-            .grand-rentree h2 {
-                font-size: 28px;
-            }
-        }
+        /* Le contenu de ce style a été déplacé dans css/index.css */
+        /* Ce bloc peut être supprimé si css/index.css est bien chargé. */
     </style>
 </head>
 
@@ -920,8 +23,8 @@
     <nav class="glass-nav">
         <div class="container">
             <a href="#" class="logo">
-                <div class="logo-icon">N</div>
-                <div class="logo-text">Net<span>Academy</span></div>
+                <div class="logo-icon">A</div>
+                <div class="logo-text">Attic<span>Academy</span></div>
             </a>
 
             <div class="mobile-menu-btn">
@@ -937,7 +40,7 @@
                         </li>
                         <li><a href="#rentree">Grande Rentrée</a></li>
                         <li><a href="#parcours">Parcours</a></li>
-                        <li><a href="#temoignages">Témoignages</a></li>
+                        <li><a href="#temoignages">Equipe</a></li>
                         <li><a href="#inscription" class="nav-cta">S'inscrire</a></li>
                     </ul>
                 </div>
@@ -964,43 +67,50 @@
     <!-- Hidden Data Panels for Dropdowns -->
     <div id="formations-menu" class="dropdown-panel">
         <div class="dropdown-column">
-            <div class="dropdown-title">Nos Formations</div>
+            <div class="dropdown-title">Nos Grandes Rentrée</div>
             <a href="#formations" class="dropdown-link">
                 <i class="fas fa-laptop-code"></i>
                 <div>
-                    <span class="link-title">Web Full-Stack</span>
-                    <span class="link-description">HTML, CSS, JS, React, Node</span>
+                    <span class="link-title">Web/Mobile/Logiciel  Full-Stack</span>
+                    <span class="link-description">HTML, CSS, JS, React, Node, Python,<br> PHP, Flutter...</span>
+                </div>
+            </a>
+            <a href="./reseaux-ccna.html" class="dropdown-link">
+                <i class="fas fa-network-wired"></i>
+                <div>
+                    <span class="link-title">Reseaux & CCNA</span>
+                    <span class="link-description">Administration infrastructure</span>
+                </div>
+            </a>
+            <a href="#" class="dropdown-link">
+                <i class="fas fa-code"></i>
+                <div>
+                    <span class="link-title">Base Algorithmique</span>
+                    <span class="link-description">Maitriser les base Algorithmique avec <br>le C/C++, JAVA et Python</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropdown-column">
+            <div class="dropdown-title">Formation Individuel</div>
+            <a href="#" class="dropdown-link">
+                <i class="fas fa-database"></i>
+                <div>
+                    <span class="link-title">Base de Données</span>
+                    <span class="link-description">Maîtriser les bases de données <br>relationnelles et NoSQL</span>
+                </div>
+            </a>
+            <a href="#" class="dropdown-link">
+                <i class="fas fa-globe"></i>
+                <div>
+                    <span class="link-title">Web</span>
+                    <span class="link-description">HTML, CSS, JS, PHP, Node</span>
                 </div>
             </a>
             <a href="#" class="dropdown-link">
                 <i class="fas fa-mobile-alt"></i>
                 <div>
-                    <span class="link-title">Mobile (iOS/Android)</span>
-                    <span class="link-description">React Native & Flutter</span>
-                </div>
-            </a>
-            <a href="#" class="dropdown-link">
-                <i class="fas fa-database"></i>
-                <div>
-                    <span class="link-title">Python & Data</span>
-                    <span class="link-description">Data Science & IA</span>
-                </div>
-            </a>
-        </div>
-        <div class="dropdown-column">
-            <div class="dropdown-title">Spécialisations</div>
-            <a href="#" class="dropdown-link">
-                <i class="fas fa-shield-alt"></i>
-                <div>
-                    <span class="link-title">Cybersécurité</span>
-                    <span class="link-description">Sécurité des réseaux & systèmes</span>
-                </div>
-            </a>
-            <a href="#" class="dropdown-link">
-                <i class="fas fa-network-wired"></i>
-                <div>
-                    <span class="link-title">Réseaux & CCNA</span>
-                    <span class="link-description">Administration infrastructure</span>
+                    <span class="link-title">Mobile</span>
+                    <span class="link-description">Flutter, React Native, iOS, Android</span>
                 </div>
             </a>
         </div>
@@ -1010,7 +120,7 @@
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-text">
-                <h1>Formez-vous aux <span>technologies d'avenir</span> avec NetAcademy</h1>
+                <h1>Formez-vous aux <span>technologies d'avenir</span> avec AtticAcademy</h1>
                 <p>Développez vos compétences en développement web, mobile, logiciel, Python et administration de bases
                     de données avec nos formations certifiantes et nos experts du secteur.</p>
 
@@ -1062,9 +172,9 @@
                     </div>
 
                     <div class="diagram-tech">
-                        <div class="tech-item">Web</div>
-                        <div class="tech-item">Mobile</div>
-                        <div class="tech-item">Python</div>
+                        <a href="./web-mobile-logiciel.html" class="tech-item">Web</a>
+                        <a href="./web-mobile-logiciel.html" class="tech-item">Mobile</a>
+                        <a href="#" class="tech-item">Python</a>
                     </div>
 
                     <div class="diagram-lines">
@@ -1075,8 +185,8 @@
 
                     <div class="diagram-tech">
                         <div class="tech-item">BDD</div>
-                        <div class="tech-item">Logiciel</div>
-                        <div class="tech-item">Réseaux</div>
+                        <a href="./web-mobile-logiciel.html" class="tech-item">Logiciel</a>
+                        <a href="./reseaux-ccna.html" target="_blank" class="tech-item">Réseaux</a>
                     </div>
                 </div>
             </div>
@@ -1086,7 +196,7 @@
     <!-- Grande Rentrée Section -->
     <section id="rentree" class="grand-rentree">
         <div class="container">
-            <h2>Grande Rentrée 2024</h2>
+            <h2>Grande Rentrée juin 2026</h2>
             <p>Rejoignez notre session de rentrée et spécialisez-vous dans les technologies les plus demandées du marché
                 avec nos formations intensives en développement web, mobile et logiciel.</p>
 
@@ -1167,7 +277,7 @@
                         </div>
                     </div>
                     <div class="formation-image">
-                        💻
+                        <img src="./assets/image/developpeurs-frontend-backend.webp" alt="">
                     </div>
                 </div>
 
@@ -1207,7 +317,7 @@
                         </div>
                     </div>
                     <div class="formation-image">
-                        📱
+                        <img src="./assets/image/banniere-developpement-applications_33099-1720.avif" alt="">
                     </div>
                 </div>
 
@@ -1246,7 +356,7 @@
                         </div>
                     </div>
                     <div class="formation-image">
-                        🐍
+                        <img src="./assets/image/Python-Data-Science.webp" alt="formation Python et Data Science">
                     </div>
                 </div>
 
@@ -1286,7 +396,7 @@
                         </div>
                     </div>
                     <div class="formation-image">
-                        🗄️
+                        <img src="./assets/image/administration-bdd.png" alt="Administration Base de Données">
                     </div>
                 </div>
 
@@ -1326,7 +436,7 @@
                         </div>
                     </div>
                     <div class="formation-image">
-                        ⚙️
+                        <img src="./assets/image/software_engin.png" alt="">
                     </div>
                 </div>
 
@@ -1367,7 +477,7 @@
                         </div>
                     </div>
                     <div class="formation-image">
-                        🌐
+                        <img src="./assets/image/reseau.png" alt="">
                     </div>
                 </div>
 
@@ -1617,17 +727,44 @@
     </section>
 
     <!-- CTA -->
-    <section id="inscription" class="cta-section">
+    <section id="inscription" class="section contact-section">
         <div class="container">
-            <h2>Prêt à lancer votre carrière tech ?</h2>
-            <p>Rejoignez notre prochaine session de la grande rentrée et bénéficiez d'un accompagnement personnalisé
-                jusqu'à votre premier emploi dans l'IT</p>
-            <a href="#" class="cta-button-large">
-                <span>S'inscrire maintenant</span>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-            </a>
+            <div class="section-title">
+                <h2>Contactez-nous pour vous inscrire</h2>
+                <p>Remplissez le formulaire pour recevoir la brochure et être contacté par notre équipe d'admission.</p>
+            </div>
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="formation">Formation souhaitée</label>
+                    <select id="formation" name="formation" required>
+                        <option value="">-- Choisissez une formation --</option>
+                        <option value="web">Développement Web Full-Stack</option>
+                        <option value="mobile">Développement Mobile</option>
+                        <option value="python">Python & Data Science</option>
+                        <option value="bdd">Administration Base de Données</option>
+                        <option value="logiciel">Génie Logiciel</option>
+                        <option value="reseaux">Administration Réseaux & CCNA</option>
+                    </select>
+                    <div class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Votre message (optionnel)</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="cta-button-large" id="submit-btn" disabled>Envoyer ma demande</button>
+            </form>
         </div>
     </section>
 
@@ -1638,10 +775,10 @@
                 <div class="footer-about">
                     <div class="footer-logo">
                         <div class="logo-icon">N</div>
-                        <div class="logo-text">NetAcademy</div>
+                        <div class="logo-text">AAcademy</div>
                     </div>
                     <p class="footer-desc">
-                        NetAcademy est le centre de formation tech leader en France.
+                        AtticAcademy est le centre de formation tech leader en France.
                         Nous accompagnons depuis 2018 des milliers de professionnels et passionnés vers l'excellence en
                         développement web, mobile, logiciel et data.
                     </p>
@@ -1670,7 +807,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>© 2024 NetAcademy — Tous droits réservés. Formations en développement web, mobile, logiciel, Python
+                <p>© 2024 AtticAcademy — Tous droits réservés. Formations en développement web, mobile, logiciel, Python
                     et administration de bases de données.</p>
             </div>
         </div>
@@ -1748,6 +885,73 @@
             el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
             animateOnScroll.observe(el);
         });
+
+        // --- Form Validation Logic ---
+        const form = document.getElementById('contact-form');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const formationSelect = document.getElementById('formation');
+        const submitBtn = document.getElementById('submit-btn');
+
+        const validators = {
+            name: {
+                validate: (value) => value.trim().length > 2,
+                message: "Le nom doit contenir au moins 3 caractères."
+            },
+            email: {
+                validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+                message: "Veuillez entrer une adresse e-mail valide."
+            },
+            formation: {
+                validate: (value) => value !== "",
+                message: "Veuillez choisir une formation."
+            }
+        };
+
+        function validateField(input) {
+            const validator = validators[input.name];
+            if (!validator) return true;
+
+            const isValid = validator.validate(input.value);
+            const formGroup = input.parentElement;
+            const errorDiv = formGroup.querySelector('.error-message');
+
+            if (!isValid) {
+                formGroup.classList.add('invalid');
+                errorDiv.textContent = validator.message;
+            } else {
+                formGroup.classList.remove('invalid');
+                errorDiv.textContent = "";
+            }
+            return isValid;
+        }
+
+        function checkFormValidity() {
+            const isNameValid = validateField(nameInput);
+            const isEmailValid = validateField(emailInput);
+            const isFormationValid = validateField(formationSelect);
+            
+            submitBtn.disabled = !(isNameValid && isEmailValid && isFormationValid);
+        }
+
+        if (form) {
+            [nameInput, emailInput, formationSelect].forEach(input => {
+                input.addEventListener('input', () => validateField(input));
+                input.addEventListener('blur', () => validateField(input)); // Validate on blur too
+                input.addEventListener('input', checkFormValidity);
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const isFormValid = !submitBtn.disabled;
+                
+                if (isFormValid) {
+                    alert('Formulaire envoyé avec succès ! (Ceci est une simulation)');
+                    form.reset();
+                    submitBtn.disabled = true;
+                }
+            });
+        }
     </script>
     <script src="js/navbar.js"></script>
 </body>
