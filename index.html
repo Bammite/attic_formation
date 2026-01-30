@@ -20,112 +20,18 @@
 
 <body>
     <!-- Header -->
-    <nav class="glass-nav">
-        <div class="container">
-            <a href="#" class="logo">
-                <div class="logo-icon">A</div>
-                <div class="logo-text">Attic<span>Academy</span></div>
-            </a>
-
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-
-            <!-- Wrapper for mobile sliding effect -->
-            <div class="nav-content-wrapper">
-                <div class="nav-panel main-nav-panel">
-                    <ul class="nav-links">
-                        <li class="nav-item-with-dropdown" data-menu="formations">
-                            <a href="#">Formations <i class="fas fa-chevron-down"></i></a>
-                        </li>
-                        <li><a href="#rentree">Grande Rentrée</a></li>
-                        <li><a href="#parcours">Parcours</a></li>
-                        <li><a href="#temoignages">Equipe</a></li>
-                        <li><a href="#inscription" class="nav-cta">S'inscrire</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav-panel sub-nav-panel">
-                    <div class="mobile-back-button">
-                        <i class="fas fa-chevron-left"></i> <span id="mobile-nav-title">Menu</span>
-                    </div>
-                    <div class="sub-nav-content">
-                        <!-- Content injected by JS -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Desktop Mega Menu Container -->
-        <div class="dropdown-mega-menu">
-            <div class="dropdown-content-container">
-                <!-- Content injected by JS -->
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hidden Data Panels for Dropdowns -->
-    <div id="formations-menu" class="dropdown-panel">
-        <div class="dropdown-column">
-            <div class="dropdown-title">Nos Grandes Rentrée</div>
-            <a href="#formations" class="dropdown-link">
-                <i class="fas fa-laptop-code"></i>
-                <div>
-                    <span class="link-title">Web/Mobile/Logiciel  Full-Stack</span>
-                    <span class="link-description">HTML, CSS, JS, React, Node, Python,<br> PHP, Flutter...</span>
-                </div>
-            </a>
-            <a href="./reseaux-ccna.html" class="dropdown-link">
-                <i class="fas fa-network-wired"></i>
-                <div>
-                    <span class="link-title">Reseaux & CCNA</span>
-                    <span class="link-description">Administration infrastructure</span>
-                </div>
-            </a>
-            <a href="#" class="dropdown-link">
-                <i class="fas fa-code"></i>
-                <div>
-                    <span class="link-title">Base Algorithmique</span>
-                    <span class="link-description">Maitriser les base Algorithmique avec <br>le C/C++, JAVA et Python</span>
-                </div>
-            </a>
-        </div>
-        <div class="dropdown-column">
-            <div class="dropdown-title">Formation Individuel</div>
-            <a href="#" class="dropdown-link">
-                <i class="fas fa-database"></i>
-                <div>
-                    <span class="link-title">Base de Données</span>
-                    <span class="link-description">Maîtriser les bases de données <br>relationnelles et NoSQL</span>
-                </div>
-            </a>
-            <a href="#" class="dropdown-link">
-                <i class="fas fa-globe"></i>
-                <div>
-                    <span class="link-title">Web</span>
-                    <span class="link-description">HTML, CSS, JS, PHP, Node</span>
-                </div>
-            </a>
-            <a href="#" class="dropdown-link">
-                <i class="fas fa-mobile-alt"></i>
-                <div>
-                    <span class="link-title">Mobile</span>
-                    <span class="link-description">Flutter, React Native, iOS, Android</span>
-                </div>
-            </a>
-        </div>
-    </div>
+    <div id="navbar-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-text">
-                <h1>Formez-vous aux <span>technologies d'avenir</span> avec AtticAcademy</h1>
+                <h1>Formez-vous aux <span class="linear-gradient">technologies d'avenir</span> avec <span class="surBriance">AtticAcademy</span> </h1>
                 <p>Développez vos compétences en développement web, mobile, logiciel, Python et administration de bases
                     de données avec nos formations certifiantes et nos experts du secteur.</p>
 
                 <div class="button-group">
-                    <a href="#rentree" class="btn-primary">
+                    <a href="./grande-rentree-fullstack.html" class="btn-primary">
                         <span>Découvrir la grande rentrée</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
@@ -769,49 +675,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <div class="logo-icon">N</div>
-                        <div class="logo-text">AAcademy</div>
-                    </div>
-                    <p class="footer-desc">
-                        AtticAcademy est le centre de formation tech leader en France.
-                        Nous accompagnons depuis 2018 des milliers de professionnels et passionnés vers l'excellence en
-                        développement web, mobile, logiciel et data.
-                    </p>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Formations</h4>
-                    <ul>
-                        <li><a href="#">Développement Web</a></li>
-                        <li><a href="#">Python & Data Science</a></li>
-                        <li><a href="#">Administration BDD</a></li>
-                        <li><a href="#">Développement Mobile</a></li>
-                        <li><a href="#">Développement Logiciel</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="#">info@netacademy.fr</a></li>
-                        <li><a href="#">01 23 45 67 89</a></li>
-                        <li><a href="#">Eligibilité CPF</a></li>
-                        <li><a href="#">Demande de brochure</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>© 2024 AtticAcademy — Tous droits réservés. Formations en développement web, mobile, logiciel, Python
-                    et administration de bases de données.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script>
         // Animation des statistiques
@@ -953,6 +817,8 @@
             });
         }
     </script>
+    <script src="js/navbar-generator.js"></script>
+    <script src="js/footer-generator.js"></script>
     <script src="js/navbar.js"></script>
 </body>
 

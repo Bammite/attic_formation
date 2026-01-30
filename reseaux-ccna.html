@@ -7,6 +7,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" href="css/navbar.css">
+	<link rel="stylesheet" href="css/footer.css">
 	<style>
 		:root {
 			--cisco-blue: #049fd9;
@@ -30,6 +31,7 @@
 			--primary-color: var(--cisco-blue);
 			--accent-color: var(--cisco-blue-dark);
 			--light-color: var(--bg-secondary);
+			--footer-bg: var(--network-gray);
 			--transition: all 0.3s ease;
 		}
 
@@ -646,77 +648,6 @@
 			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 		}
 
-		/* Footer */
-		.footer {
-			background: var(--network-gray);
-			color: white;
-			padding: 60px 0 40px;
-		}
-
-		.footer-content {
-			display: grid;
-			grid-template-columns: 2fr 1fr 1fr;
-			gap: 60px;
-			margin-bottom: 40px;
-		}
-
-		.footer-logo {
-			display: flex;
-			align-items: center;
-			gap: 12px;
-			margin-bottom: 20px;
-		}
-
-		.footer-logo .logo-icon {
-			width: 32px;
-			height: 32px;
-			font-size: 16px;
-		}
-
-		.footer-logo .logo-text {
-			color: white;
-			font-size: 18px;
-		}
-
-		.footer-desc {
-			opacity: 0.8;
-			font-size: 14px;
-			line-height: 1.7;
-		}
-
-		.footer-links h4 {
-			font-size: 16px;
-			margin-bottom: 20px;
-			color: white;
-		}
-
-		.footer-links ul {
-			list-style: none;
-		}
-
-		.footer-links li {
-			margin-bottom: 12px;
-		}
-
-		.footer-links a {
-			color: rgba(255, 255, 255, 0.8);
-			text-decoration: none;
-			font-size: 14px;
-			transition: color 0.2s;
-		}
-
-		.footer-links a:hover {
-			color: var(--cisco-blue);
-		}
-
-		.footer-bottom {
-			padding-top: 40px;
-			border-top: 1px solid rgba(255, 255, 255, 0.1);
-			text-align: center;
-			font-size: 14px;
-			opacity: 0.8;
-		}
-
 		/* Responsive */
 		@media (max-width: 1024px) {
 			.hero-content {
@@ -732,10 +663,6 @@
 			.cert-grid {
 				grid-template-columns: 1fr;
 				gap: 60px;
-			}
-			
-			.footer-content {
-				grid-template-columns: 1fr 1fr;
 			}
 		}
 
@@ -755,11 +682,6 @@
 			
 			.stats-grid {
 				grid-template-columns: repeat(2, 1fr);
-			}
-			
-			.footer-content {
-				grid-template-columns: 1fr;
-				gap: 40px;
 			}
 		}
 
@@ -793,94 +715,7 @@
 </head>
 <body>
 	<!-- Header -->
-	<nav class="glass-nav">
-		<div class="container">
-			<a href="./index.html" class="logo">
-				<div class="logo-icon">N</div>
-				<div class="logo-text">Net<span>Academy</span></div>
-			</a>
-
-			<div class="mobile-menu-btn">
-				<i class="fas fa-bars"></i>
-			</div>
-
-			<!-- Wrapper for mobile sliding effect -->
-			<div class="nav-content-wrapper">
-				<div class="nav-panel main-nav-panel">
-					<ul class="nav-links">
-						<li class="nav-item-with-dropdown" data-menu="formations">
-							<a href="#">Formations <i class="fas fa-chevron-down"></i></a>
-						</li>
-						<li><a href="#certifications">Certifications</a></li>
-						<li><a href="#parcours">Parcours</a></li>
-						<li><a href="#temoignages">Témoignages</a></li>
-						<li><a href="#inscription" class="nav-cta">Commencer</a></li>
-					</ul>
-				</div>
-
-				<div class="nav-panel sub-nav-panel">
-					<div class="mobile-back-button">
-						<i class="fas fa-chevron-left"></i> <span id="mobile-nav-title">Menu</span>
-					</div>
-					<div class="sub-nav-content">
-						<!-- Content injected by JS -->
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Desktop Mega Menu Container -->
-		<div class="dropdown-mega-menu">
-			<div class="dropdown-content-container">
-				<!-- Content injected by JS -->
-			</div>
-		</div>
-	</nav>
-
-	<!-- Hidden Data Panels for Dropdowns -->
-	<div id="formations-menu" class="dropdown-panel">
-		<div class="dropdown-column">
-			<div class="dropdown-title">Nos Formations</div>
-			<a href="#formations" class="dropdown-link">
-				<i class="fas fa-laptop-code"></i>
-				<div>
-					<span class="link-title">CCNA Fundamentals</span>
-					<span class="link-description">Bases réseaux & TCP/IP</span>
-				</div>
-			</a>
-			<a href="#" class="dropdown-link">
-				<i class="fas fa-network-wired"></i>
-				<div>
-					<span class="link-title">Routing & Switching</span>
-					<span class="link-description">Configuration Cisco avancée</span>
-				</div>
-			</a>
-			<a href="#" class="dropdown-link">
-				<i class="fas fa-shield-alt"></i>
-				<div>
-					<span class="link-title">Network Security</span>
-					<span class="link-description">Sécurisation des infrastructures</span>
-				</div>
-			</a>
-		</div>
-		<div class="dropdown-column">
-			<div class="dropdown-title">Ressources</div>
-			<a href="#" class="dropdown-link">
-				<i class="fas fa-file-alt"></i>
-				<div>
-					<span class="link-title">Documentation</span>
-					<span class="link-description">Guides et cheat sheets</span>
-				</div>
-			</a>
-			<a href="#" class="dropdown-link">
-				<i class="fas fa-flask"></i>
-				<div>
-					<span class="link-title">Labs Virtuels</span>
-					<span class="link-description">Pratiquez sur Packet Tracer</span>
-				</div>
-			</a>
-		</div>
-	</div>
+	<div id="navbar-placeholder"></div>
 
 	<!-- Hero Section -->
 	<section class="hero">
@@ -1208,46 +1043,7 @@
 	</section>
 
 	<!-- Footer -->
-	<footer class="footer">
-		<div class="container">
-			<div class="footer-content">
-				<div class="footer-about">
-					<div class="footer-logo">
-						<div class="logo-icon">N</div>
-						<div class="logo-text">NetAcademy</div>
-					</div>
-					<p class="footer-desc">
-						NetAcademy est le leader français de la formation aux certifications Cisco. 
-						Nous accompagnons depuis 2015 des milliers de professionnels vers l'excellence en réseaux.
-					</p>
-				</div>
-				
-				<div class="footer-links">
-					<h4>Formations</h4>
-					<ul>
-						<li><a href="#">CCNA Fundamentals</a></li>
-						<li><a href="#">Routing & Switching</a></li>
-						<li><a href="#">Network Security</a></li>
-						<li><a href="#">Formation sur mesure</a></li>
-					</ul>
-				</div>
-				
-				<div class="footer-links">
-					<h4>Contact</h4>
-					<ul>
-						<li><a href="#">info@netacademy.fr</a></li>
-						<li><a href="#">01 23 45 67 89</a></li>
-						<li><a href="#">Eligibilité CPF</a></li>
-						<li><a href="#">Demande de brochure</a></li>
-					</ul>
-				</div>
-			</div>
-			
-			<div class="footer-bottom">
-				<p>© 2024 NetAcademy — Tous droits réservés. Cisco et CCNA sont des marques déposées de Cisco Systems.</p>
-			</div>
-		</div>
-	</footer>
+	<div id="footer-placeholder"></div>
 
 	<script>
 		// Animation des statistiques
@@ -1304,6 +1100,8 @@
 			node.style.animationDelay = `${index * 0.2}s`;
 		});
 	</script>
+	<script src="js/navbar-generator.js"></script>
+	<script src="js/footer-generator.js"></script>
 	<script src="js/navbar.js"></script>
 </body>
 </html>

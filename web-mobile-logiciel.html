@@ -7,6 +7,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" href="css/navbar.css">
+	<link rel="stylesheet" href="css/footer.css">
 	<style>
 		:root {
 			--dev-purple: #6c5ce7;
@@ -27,6 +28,7 @@
 			--primary-color: var(--dev-purple);
 			--accent-color: #a29bfe;
 			--light-color: var(--bg-secondary);
+			--footer-bg: var(--dev-dark);
 			--transition: all 0.3s ease;
 		}
 
@@ -365,84 +367,16 @@
 			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 		}
 
-		/* Footer (Reused) */
-		.footer {
-			background: var(--dev-dark);
-			color: white;
-			padding: 60px 0 40px;
-		}
-		/* ... Footer styles same as CCNA ... */
-		.footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
-		.footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-		.footer-logo .logo-icon { width: 32px; height: 32px; font-size: 16px; background: var(--dev-purple); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
-		.footer-links ul { list-style: none; }
-		.footer-links li { margin-bottom: 12px; }
-		.footer-links a { color: rgba(255,255,255,0.8); text-decoration: none; }
-		.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; text-align: center; opacity: 0.8; }
-
 		@media (max-width: 768px) {
 			.hero-content { grid-template-columns: 1fr; }
 			.domain-card { grid-template-columns: 1fr; gap: 24px; }
 			.methodology-grid { grid-template-columns: 1fr; }
-			.footer-content { grid-template-columns: 1fr; }
 		}
 	</style>
 </head>
 <body>
 	<!-- Header -->
-	<nav class="glass-nav">
-		<div class="container">
-			<a href="./index.html" class="logo">
-				<div class="logo-icon">N</div>
-				<div class="logo-text">Net<span>Academy</span></div>
-			</a>
-
-			<div class="mobile-menu-btn">
-				<i class="fas fa-bars"></i>
-			</div>
-
-			<div class="nav-content-wrapper">
-				<div class="nav-panel main-nav-panel">
-					<ul class="nav-links">
-						<li class="nav-item-with-dropdown" data-menu="formations">
-							<a href="#">Formations <i class="fas fa-chevron-down"></i></a>
-						</li>
-						<li><a href="#methodologie">Méthodologie</a></li>
-						<li><a href="#parcours">Parcours</a></li>
-						<li><a href="#inscription" class="nav-cta">Commencer</a></li>
-					</ul>
-				</div>
-				<div class="nav-panel sub-nav-panel">
-					<div class="mobile-back-button">
-						<i class="fas fa-chevron-left"></i> <span id="mobile-nav-title">Menu</span>
-					</div>
-					<div class="sub-nav-content"></div>
-				</div>
-			</div>
-		</div>
-		<div class="dropdown-mega-menu">
-			<div class="dropdown-content-container"></div>
-		</div>
-	</nav>
-
-	<!-- Hidden Data Panels -->
-	<div id="formations-menu" class="dropdown-panel">
-		<div class="dropdown-column">
-			<div class="dropdown-title">Développement</div>
-			<a href="#web" class="dropdown-link">
-				<i class="fas fa-globe"></i>
-				<div><span class="link-title">Web Full-Stack</span><span class="link-description">React, Node.js, SQL</span></div>
-			</a>
-			<a href="#mobile" class="dropdown-link">
-				<i class="fas fa-mobile-alt"></i>
-				<div><span class="link-title">Mobile Apps</span><span class="link-description">Flutter, React Native</span></div>
-			</a>
-			<a href="#logiciel" class="dropdown-link">
-				<i class="fas fa-laptop-code"></i>
-				<div><span class="link-title">Génie Logiciel</span><span class="link-description">Python, Architecture</span></div>
-			</a>
-		</div>
-	</div>
+	<div id="navbar-placeholder"></div>
 
 	<!-- Hero Section -->
 	<section class="hero">
@@ -615,38 +549,10 @@
 	</section>
 
 	<!-- Footer -->
-	<footer class="footer">
-		<div class="container">
-			<div class="footer-content">
-				<div class="footer-about">
-					<div class="footer-logo">
-						<div class="logo-icon">N</div>
-						<div class="logo-text">NetAcademy</div>
-					</div>
-					<p>Formations d'excellence en développement pour les créateurs de demain.</p>
-				</div>
-				<div class="footer-links">
-					<h4>Liens Rapides</h4>
-					<ul>
-						<li><a href="#web">Web Dev</a></li>
-						<li><a href="#mobile">Mobile Dev</a></li>
-						<li><a href="#logiciel">Génie Logiciel</a></li>
-					</ul>
-				</div>
-				<div class="footer-links">
-					<h4>Contact</h4>
-					<ul>
-						<li><a href="#">contact@netacademy.fr</a></li>
-						<li><a href="#">+33 1 23 45 67 89</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="footer-bottom">
-				<p>© 2024 NetAcademy. Tous droits réservés.</p>
-			</div>
-		</div>
-	</footer>
+	<div id="footer-placeholder"></div>
 
+	<script src="js/navbar-generator.js"></script>
+	<script src="js/footer-generator.js"></script>
 	<script src="js/navbar.js"></script>
 </body>
 </html>
