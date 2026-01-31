@@ -7,6 +7,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" href="css/navbar.css">
+	<link rel="stylesheet" href="css/general.css">
 	<link rel="stylesheet" href="css/footer.css">
 	<style>
 		:root {
@@ -14,18 +15,8 @@
 			--cisco-blue-dark: #0073a8;
 			--network-gray: #1d252c;
 			--network-gray-light: #2d3747;
-			--text-primary: #1a1f36;
-			--text-secondary: #4a5568;
-			--text-tertiary: #718096;
-			--bg-primary: #ffffff;
-			--bg-secondary: #f7f9fc;
-			--bg-tertiary: #edf2f7;
 			--accent-green: #00b894;
 			--accent-red: #e53e3e;
-			--border-color: #e2e8f0;
-			--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-			--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-			--shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
 
 			/* Mapping pour la navbar */
 			--primary-color: var(--cisco-blue);
@@ -33,27 +24,6 @@
 			--light-color: var(--bg-secondary);
 			--footer-bg: var(--network-gray);
 			--transition: all 0.3s ease;
-		}
-
-		* {
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-		}
-
-		html, body {
-			height: 100%;
-			font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-			background-color: var(--bg-primary);
-			color: var(--text-primary);
-			line-height: 1.6;
-			scroll-behavior: smooth;
-		}
-
-		.container {
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 0 24px;
 		}
 
 		/* Hero Section */
@@ -279,26 +249,8 @@
 		}
 
 		/* Formations */
-		.section {
-			padding: 100px 0;
-		}
-
-		.section-title {
-			text-align: center;
-			margin-bottom: 60px;
-		}
-
 		.section-title h2 {
-			font-size: 36px;
 			color: var(--network-gray);
-			margin-bottom: 16px;
-		}
-
-		.section-title p {
-			color: var(--text-secondary);
-			max-width: 600px;
-			margin: 0 auto;
-			font-size: 18px;
 		}
 
 		.courses-grid {
@@ -692,10 +644,6 @@
 			
 			.hero {
 				padding: 120px 0 60px;
-			}
-			
-			.section {
-				padding: 60px 0;
 			}
 			
 			.stats-grid {

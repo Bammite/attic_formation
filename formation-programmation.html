@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/modal.css">
     <style>
         :root {
             --code-green: #00b894;
             --code-blue: #0984e3;
             --dark-bg: #2d3436;
             --light-bg: #f5f6fa;
-            --text-primary: #2d3436;
-            --text-secondary: #636e72;
             
             /* Navbar mapping */
             --primary-color: var(--code-green);
@@ -27,17 +27,10 @@
             --transition: all 0.3s ease;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Space Grotesk', sans-serif; color: var(--text-primary); line-height: 1.6; background: white; }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        .section { padding: 100px 0; }
         .bg-light { background-color: var(--light-bg); }
         .bg-dark { background-color: var(--dark-bg); color: white; }
         
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 2.5rem; margin-bottom: 16px; color: var(--dark-bg); }
-        .section-header p { color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+        .section-header h2 { color: var(--dark-bg); }
         .bg-dark .section-header h2 { color: white; }
         .bg-dark .section-header p { color: rgba(255,255,255,0.8); }
 
@@ -465,7 +458,7 @@
         <div class="container">
             <h1>Programmation à la Carte<br><span>Votre Avenir, Votre Code</span></h1>
             <p>Une formation sur mesure adaptée à votre profil. Que vous soyez débutant ou expert, choisissez les modules qui propulseront votre carrière.</p>
-            <a href="#contact" class="cta-button-large">Construire mon programme</a>
+            <a href="#" class="cta-button-large open-modal-btn">Construire mon programme</a>
         </div>
     </header>
 
@@ -498,14 +491,15 @@
             </div>
 
             <div class="lang-grid">
-                <div class="lang-card"><div class="lang-icon" style="color:#3776ab"><i class="fab fa-python"></i></div><div class="lang-info"><h4>Python</h4><span>Data & Scripting</span></div></div>
-                <div class="lang-card"><div class="lang-icon" style="color:#f7df1e"><i class="fab fa-js"></i></div><div class="lang-info"><h4>JavaScript</h4><span>Web Interactif</span></div></div>
-                <div class="lang-card"><div class="lang-icon" style="color:#e76f00"><i class="fab fa-java"></i></div><div class="lang-info"><h4>Java</h4><span>Entreprise & Android</span></div></div>
-                <div class="lang-card"><div class="lang-icon" style="color:#61dafb"><i class="fab fa-react"></i></div><div class="lang-info"><h4>React</h4><span>Front-End Moderne</span></div></div>
-                <div class="lang-card"><div class="lang-icon" style="color:#777bb4"><i class="fab fa-php"></i></div><div class="lang-info"><h4>PHP / Laravel</h4><span>Back-End Web</span></div></div>
-                <div class="lang-card"><div class="lang-icon" style="color:#00599c"><i class="fas fa-code"></i></div><div class="lang-info"><h4>C / C++</h4><span>Système & Performance</span></div></div>
-                <div class="lang-card"><div class="lang-icon" style="color:#02569b"><i class="fab fa-flutter"></i></div><div class="lang-info"><h4>Flutter</h4><span>Mobile Cross-platform</span></div></div>
-                <div class="lang-card"><div class="lang-icon" style="color:#333"><i class="fab fa-github"></i></div><div class="lang-info"><h4>Git & DevOps</h4><span>Outils Collaboratifs</span></div></div>
+                <div class="lang-card open-modal-btn" data-domain="python"><div class="lang-icon" style="color:#3776ab"><i class="fab fa-python"></i></div><div class="lang-info"><h4>Python</h4><span>Data & Scripting</span></div></div>
+                <div class="lang-card open-modal-btn" data-domain="javascript"><div class="lang-icon" style="color:#f7df1e"><i class="fab fa-js"></i></div><div class="lang-info"><h4>JavaScript</h4><span>Web Interactif</span></div></div>
+                <div class="lang-card open-modal-btn" data-domain="java"><div class="lang-icon" style="color:#e76f00"><i class="fab fa-java"></i></div><div class="lang-info"><h4>Java</h4><span>Entreprise & Android</span></div></div>
+                <div class="lang-card open-modal-btn" data-domain="react"><div class="lang-icon" style="color:#61dafb"><i class="fab fa-react"></i></div><div class="lang-info"><h4>React</h4><span>Front-End Moderne</span></div></div>
+                <div class="lang-card open-modal-btn" data-domain="php"><div class="lang-icon" style="color:#777bb4"><i class="fab fa-php"></i></div><div class="lang-info"><h4>PHP / Laravel</h4><span>Back-End Web</span></div></div>
+                <div class="lang-card open-modal-btn" data-domain="cpp"><div class="lang-icon" style="color:#00599c"><i class="fas fa-code"></i></div><div class="lang-info"><h4>C / C++</h4><span>Système & Performance</span></div></div>
+                <div class="lang-card open-modal-btn" data-domain="flutter"><div class="lang-icon" style="color:#02569b"><i class="fab fa-flutter"></i></div><div class="lang-info"><h4>Flutter</h4><span>Mobile Cross-platform</span></div></div>
+                <div class="lang-card open-modal-btn" data-domain="git"><div class="lang-icon" style="color:#333"><i class="fab fa-github"></i></div><div class="lang-info"><h4>Git & DevOps</h4><span>Outils Collaboratifs</span></div></div>
+                <div class="lang-card open-modal-btn" data-domain="bureautique"><div class="lang-icon" style="color:#2b579a"><i class="fas fa-file-word"></i></div><div class="lang-info"><h4>Bureautique</h4><span>Word, Excel, PowerPoint</span></div></div>
             </div>
         </div>
     </section>
@@ -664,33 +658,32 @@
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Découverte</h3>
-                    <div class="price">299€ <span>/ mois</span></div>
+                    <div class="price">15.000 F<span></span></div>
                     <ul class="pricing-features">
-                        <li>8h de mentorat par mois</li>
+                        <li>20h de mentorat </li>
                         <li>1 technologie au choix</li>
                         <li>Support par email</li>
                         <li>Accès aux ressources</li>
                     </ul>
-                    <a href="#contact" class="cta-button-large" style="padding:12px 30px;font-size:1rem">Commencer</a>
+                    <a href="#" class="cta-button-large open-modal-btn" style="padding:12px 30px;font-size:1rem">Commencer</a>
                 </div>
                 
                 <div class="pricing-card featured">
                     <div class="pricing-badge">Le Plus Populaire</div>
                     <h3>Progression</h3>
-                    <div class="price">499€ <span>/ mois</span></div>
+                    <div class="price">25.000 F<span>/ mois</span></div>
                     <ul class="pricing-features">
                         <li>16h de mentorat par mois</li>
                         <li>Jusqu'à 3 technologies</li>
                         <li>Support prioritaire</li>
                         <li>Projets personnalisés</li>
-                        <li>Certification incluse</li>
                     </ul>
-                    <a href="#contact" class="cta-button-large" style="padding:12px 30px;font-size:1rem">Choisir cette formule</a>
+                    <a href="#" class="cta-button-large open-modal-btn" style="padding:12px 30px;font-size:1rem">Choisir cette formule</a>
                 </div>
                 
                 <div class="pricing-card">
                     <h3>Intensif</h3>
-                    <div class="price">799€ <span>/ mois</span></div>
+                    <div class="price">100 000 F<span>/ mois</span></div>
                     <ul class="pricing-features">
                         <li>30h de mentorat par mois</li>
                         <li>Technologies illimitées</li>
@@ -698,7 +691,7 @@
                         <li>Projets avancés</li>
                         <li>Coaching carrière</li>
                     </ul>
-                    <a href="#contact" class="cta-button-large" style="padding:12px 30px;font-size:1rem">Démarrer l'intensif</a>
+                    <a href="#" class="cta-button-large open-modal-btn" style="padding:12px 30px;font-size:1rem">Démarrer l'intensif</a>
                 </div>
             </div>
         </div>
@@ -797,6 +790,7 @@
     <script src="js/navbar-generator.js"></script>
     <script src="js/footer-generator.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/modal.js"></script>
     
     <script>
         // FAQ interactivité

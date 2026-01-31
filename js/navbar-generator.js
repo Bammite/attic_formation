@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         <li class="nav-item-with-dropdown" data-menu="formations">
                             <a href="#">Formations <i class="fas fa-chevron-down"></i></a>
                         </li>
-                        <li><a href="index.html#rentree">Grande Rentrée</a></li>
-                        <li><a href="#parcours">Parcours</a></li>
+                        <li><a href="./grande-rentree-fullstack.html">Grande Rentrée</a></li>
+                        <li><a href="#parcours">Coût des formation</a></li>
                         <li><a href="#temoignages">Equipe</a></li>
                         <li><a href="#inscription" class="nav-cta">S'inscrire</a></li>
                     </ul>
@@ -87,18 +87,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="link-description">Maîtriser les bases de données <br>relationnelles et NoSQL</span>
                 </div>
             </a>
-            <a href="web-mobile-logiciel.html" class="dropdown-link">
-                <i class="fas fa-globe"></i>
+            <a href="formation-bureautique.html" class="dropdown-link">
+                <i class="fas fa-file-word"></i>
                 <div>
-                    <span class="link-title">Web</span>
-                    <span class="link-description">HTML, CSS, JS, PHP, Node</span>
-                </div>
-            </a>
-            <a href="web-mobile-logiciel.html" class="dropdown-link">
-                <i class="fas fa-mobile-alt"></i>
-                <div>
-                    <span class="link-title">Mobile</span>
-                    <span class="link-description">Flutter, React Native, iOS, Android</span>
+                    <span class="link-title">Bureautique</span>
+                    <span class="link-description">Word, Excel, PowerPoint</span>
                 </div>
             </a>
         </div>

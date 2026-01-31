@@ -9,16 +9,15 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/modal.css">
     <style>
         :root {
             --primary-blue: #049fd9;
             --secondary-purple: #8a2be2;
             --dark-bg: #1a1f36;
-            --text-primary: #1a1f36;
-            --text-light: #4a5568;
             --bg-light: #f7f9fc;
             --white: #ffffff;
-            --border: #e2e8f0;
             
             /* Navbar mapping */
             --primary-color: var(--primary-blue);
@@ -28,10 +27,6 @@
             --transition: all 0.3s ease;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Space Grotesk', sans-serif; color: var(--text-primary); line-height: 1.6; background: var(--white); }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         
         /* Hero Specific */
         .fs-hero {
@@ -50,7 +45,7 @@
             -webkit-text-fill-color: transparent;
         }
         
-        .fs-hero p { font-size: 1.25rem; color: var(--text-light); max-width: 800px; margin: 0 auto 40px; }
+        .fs-hero p { font-size: 1.25rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto 40px; }
         
         .stack-visual {
             display: flex;
@@ -65,7 +60,7 @@
             padding: 20px 30px;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -83,12 +78,7 @@
         }
 
         /* Section Styles */
-        .section { padding: 100px 0; }
         .bg-gray { background-color: var(--bg-light); }
-        
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 2.5rem; margin-bottom: 16px; }
-        .section-header p { color: var(--text-light); font-size: 1.1rem; }
 
         /* Full Stack Pillars */
         .pillars-grid {
@@ -101,7 +91,7 @@
             background: white;
             padding: 32px;
             border-radius: 16px;
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -119,7 +109,7 @@
         }
         
         .pillar-card h3 { margin-bottom: 12px; font-size: 1.25rem; }
-        .pillar-card p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px; }
+        .pillar-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px; }
         
         .tech-list { display: flex; flex-wrap: wrap; gap: 8px; }
         .tech-tag {
@@ -159,14 +149,14 @@
             content: ''; position: absolute;
             top: 50px; left: 50%; transform: translateX(-50%);
             width: 2px; height: calc(100% + 50px);
-            background: var(--border); z-index: -1;
+            background: var(--border-color); z-index: -1;
         }
         
         .step-content {
             background: white;
             padding: 30px;
             border-radius: 16px;
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             flex-grow: 1;
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
@@ -230,7 +220,7 @@
         <div class="container">
             <h1>Grande Rentrée Full Stack</h1>
             <p>Devenez le développeur complet que les entreprises s'arrachent. Un programme intensif couvrant tout l'écosystème tech moderne : du design d'interface à l'architecture cloud.</p>
-            <a href="#inscription" class="cta-button-large">Réserver ma place</a>
+            <a href="#" class="cta-button-large open-rentree-modal-btn">Réserver ma place</a>
             
             <div class="stack-visual">
                 <div class="stack-card"><i class="fab fa-react" style="color:#61dafb"></i> Front-End</div>
@@ -423,5 +413,6 @@
     <script src="js/navbar-generator.js"></script>
     <script src="js/footer-generator.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 </html>

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NetAcademy — Formation Bureautique & Office</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <style>
+        :root {
+            --office-blue: #2b579a;
+            --office-green: #217346;
+            --office-orange: #d24726;
+            --office-dark: #2d3436;
+            
+            /* Navbar mapping */
+            --primary-color: var(--office-blue);
+            --accent-color: var(--office-green);
+            --light-color: #f3f6f9;
+            --footer-bg: var(--office-dark);
+            --transition: all 0.3s ease;
+        }
+
+        .hero-office {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #f3f6f9 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero-office h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--office-dark);
+        }
+
+        .hero-office h1 span {
+            color: var(--office-blue);
+        }
+
+        .hero-office p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .office-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .office-icon-card {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            transition: transform 0.3s;
+        }
+
+        .office-icon-card:hover { transform: translateY(-10px); }
+        .icon-word { color: var(--office-blue); }
+        .icon-excel { color: var(--office-green); }
+        .icon-ppt { color: var(--office-orange); }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .module-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .module-card.word { border-top: 4px solid var(--office-blue); }
+        .module-card.excel { border-top: 4px solid var(--office-green); }
+        .module-card.ppt { border-top: 4px solid var(--office-orange); }
+
+        .module-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .module-card h3 { margin-bottom: 15px; font-size: 1.5rem; }
+        .module-card ul { list-style: none; margin-bottom: 25px; }
+        .module-card li { margin-bottom: 8px; padding-left: 20px; position: relative; color: var(--text-secondary); }
+        .module-card li::before { content: "•"; color: var(--primary-color); position: absolute; left: 0; font-weight: bold; }
+
+        .cta-button-office {
+            background: var(--office-blue);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .cta-button-office:hover { background: #1e3f72; }
+        
+        .avantages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .avantage-card { background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: var(--shadow-sm); }
+        .avantage-card i { font-size: 40px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero -->
+    <section class="hero-office">
+        <div class="container">
+            <div class="office-icons">
+                <div class="office-icon-card icon-word"><i class="fas fa-file-word"></i></div>
+                <div class="office-icon-card icon-excel"><i class="fas fa-file-excel"></i></div>
+                <div class="office-icon-card icon-ppt"><i class="fas fa-file-powerpoint"></i></div>
+            </div>
+            <h1>Maîtrisez le <span>Pack Office</span></h1>
+            <p>Devenez incontournable en entreprise. Maîtrisez Word, Excel et PowerPoint pour gagner en productivité et professionnalisme.</p>
+            <button class="cta-button-office open-modal-btn" data-domain="bureautique">Découvrir le programme</button>
+        </div>
+    </section>
+
+    <!-- Modules -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Modules de Formation</h2>
+                <p>Des formations adaptées à votre niveau, du débutant à l'expert.</p>
+            </div>
+            
+            <div class="module-grid">
+                <!-- Word -->
+                <div class="module-card word">
+                    <div class="module-icon" style="color: var(--office-blue)"><i class="fas fa-file-word"></i></div>
+                    <h3>Microsoft Word</h3>
+                    <p>Traitement de texte professionnel.</p>
+                    <ul>
+                        <li>Mise en page avancée</li>
+                        <li>Publipostage & Mailings</li>
+                        <li>Gestion des longs documents</li>
+                        <li>Table des matières automatique</li>
+                    </ul>
+                    <button class="cta-button-office open-modal-btn" data-domain="bureautique" style="background:var(--office-blue)">Choisir ce module</button>
+                </div>
+
+                <!-- Excel -->
+                <div class="module-card excel">
+                    <div class="module-icon" style="color: var(--office-green)"><i class="fas fa-file-excel"></i></div>
+                    <h3>Microsoft Excel</h3>
+                    <p>Le tableur indispensable.</p>
+                    <ul>
+                        <li>Formules & Fonctions de base</li>
+                        <li>Tableaux Croisés Dynamiques</li>
+                        <li>Graphiques & Visualisation</li>
+                        <li>Macros & Automatisation (VBA)</li>
+                    </ul>
+                    <button class="cta-button-office open-modal-btn" data-domain="bureautique" style="background:var(--office-green)">Choisir ce module</button>
+                </div>
+
+                <!-- PowerPoint -->
+                <div class="module-card ppt">
+                    <div class="module-icon" style="color: var(--office-orange)"><i class="fas fa-file-powerpoint"></i></div>
+                    <h3>Microsoft PowerPoint</h3>
+                    <p>Présentations impactantes.</p>
+                    <ul>
+                        <li>Design de diapositives</li>
+                        <li>Animations & Transitions</li>
+                        <li>Intégration multimédia</li>
+                        <li>Mode présentateur</li>
+                    </ul>
+                    <button class="cta-button-office open-modal-btn" data-domain="bureautique" style="background:var(--office-orange)">Choisir ce module</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology/Avantages -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi se former à la bureautique ?</h2>
+            </div>
+            <div class="avantages-grid">
+                <div class="avantage-card">
+                    <i class="fas fa-chart-line" style="color:var(--office-green);"></i>
+                    <h3>Productivité</h3>
+                    <p>Gagnez un temps précieux en automatisant vos tâches répétitives sur Excel.</p>
+                </div>
+                <div class="avantage-card">
+                    <i class="fas fa-briefcase" style="color:var(--office-blue);"></i>
+                    <h3>Employabilité</h3>
+                    <p>La maîtrise du Pack Office est la compétence n°1 demandée par les recruteurs.</p>
+                </div>
+                <div class="avantage-card">
+                    <i class="fas fa-certificate" style="color:var(--office-orange);"></i>
+                    <h3>Certification</h3>
+                    <p>Préparez et passez la certification TOSA/PCIE pour valider votre niveau.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/navbar-generator.js"></script>
+    <script src="js/footer-generator.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+</html>

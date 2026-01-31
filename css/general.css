@@ -1,0 +1,65 @@
+/* General Styles & Reset */
+:root {
+    --transition: all 0.3s ease;
+    /* Couleurs par défaut */
+    --text-primary: #1a1f36;
+    --text-secondary: #4a5568;
+    --text-tertiary: #718096;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #edf2f7;
+    --border-color: #e2e8f0;
+    
+    /* Ombres */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section-title, .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2, .section-header h2 {
+    font-size: 2.5rem; /* ~40px */
+    margin-bottom: 16px;
+    /* La couleur est définie dans les fichiers spécifiques */
+}
+
+.section-title p, .section-header p {
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Utilitaires */
+.text-center { text-align: center; }
+.bg-light { background-color: var(--bg-secondary); }
+.bg-gray { background-color: var(--bg-tertiary); }
