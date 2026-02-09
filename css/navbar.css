@@ -10,14 +10,18 @@
 .glass-nav .container {
     display: flex; justify-content: space-between; align-items: center;
     width: 95%; max-width: 1400px; margin: 0 auto;
+    padding: 0;
 }
-.logo { height: 50px; display: flex; align-items: center; text-decoration: none; gap: 10px; }
+.logo { height: 50px; display: flex; align-items: center; text-decoration: none; gap: 1px; }
 .logo-icon {
-    width: 36px; height: 36px;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-    border-radius: 8px; display: flex; align-items: center; justify-content: center;
-    color: white; font-weight: 700; font-size: 18px;
+    height: 46px;
+    display: flex; align-items: center; justify-content: center;
 }
+
+.logo-icon img {
+    height: 30px; object-fit: contain;
+}
+
 .logo-text { font-size: 20px; font-weight: 700; color: var(--network-gray); }
 .logo-text span {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
@@ -117,7 +121,8 @@
         width: 100%; height: 100%; flex-shrink: 0;
         background: #fff;
         display: flex; flex-direction: column;
-        padding-top: 60px; /* Espace pour le header mobile */
+        padding: 60px 0; /* Espace pour le header mobile */
+
     }
     .main-nav-panel .nav-links {
         flex: 1; overflow-y: auto;

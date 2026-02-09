@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rejoindre l'équipe — Bammite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/general.css">
+    <!-- icon -->
+    <link rel="icon" type="image/svg+xml" href="./favico.ico">
+    <style>
+        :root {
+            --code-green: #00b894;
+            --code-blue: #0984e3;
+            --text-primary: #2d3436;
+            --text-secondary: #636e72;
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --card-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            --input-bg: #f8f9fa;
+            --input-border: #e8ecf1;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .join-container {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .auth-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--code-green), var(--code-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .auth-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .auth-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .auth-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--code-green), var(--code-blue));
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 20px;
+            padding-left: 45px; /* Espace pour l'icône */
+            border: 2px solid var(--input-border);
+            border-radius: 12px;
+            background: var(--input-bg);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        textarea.form-input {
+            padding-left: 20px;
+            resize: vertical;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--code-green);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(0, 184, 148, 0.1);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 16px;
+            top: 43px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+
+        .form-input:focus + .input-icon {
+            color: var(--code-green);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Photo Upload Styling */
+        .photo-upload-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .photo-preview-wrapper {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 15px;
+        }
+
+        .photo-preview {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: #eee;
+        }
+
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .btn-upload {
+            border: 2px dashed var(--code-blue);
+            color: var(--code-blue);
+            background-color: rgba(9, 132, 227, 0.05);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-upload:hover {
+            background-color: rgba(9, 132, 227, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--code-green), var(--code-blue));
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 184, 148, 0.2);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+        }
+
+        .submit-btn.loading .loading-spinner {
+            display: block;
+        }
+        
+        .submit-btn.loading i, .submit-btn.loading span {
+            display: none;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 30px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--code-blue);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+            .auth-card { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="join-container">
+        <div class="auth-header">
+            <h1>Rejoindre l'équipe</h1>
+            <p>Proposez votre candidature pour devenir formateur ou mentor chez Bammite.</p>
+        </div>
+
+        <div class="auth-card">
+            <form id="join-team-form" class="auth-form active" style="opacity: 1; visibility: visible; height: auto;">
+                <input type="hidden" id="photo_url" name="photo_url">
+
+                <!-- Photo Upload -->
+                <div class="photo-upload-container">
+                    <label class="form-label">Votre photo de profil</label>
+                    <div class="photo-preview-wrapper">
+                        <img id="preview-img" src="https://via.placeholder.com/150?text=Photo" class="photo-preview" alt="Aperçu">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                        <button class="btn-upload" type="button"><i class="fas fa-camera"></i> Choisir une photo</button>
+                        <input type="file" id="photo-upload" accept="image/*">
+                    </div>
+                    <small style="color: var(--text-secondary); margin-top: 10px; font-size: 0.85rem;">Format carré recommandé. Max 5Mo.</small>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Nom complet</label>
+                        <input type="text" name="full_name" class="form-input" placeholder="Jean Dupont" required>
+                        <i class="fas fa-user input-icon"></i>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Rôle souhaité</label>
+                        <input type="text" name="role" class="form-input" placeholder="Ex: Formateur Python" required>
+                        <i class="fas fa-briefcase input-icon"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email professionnel</label>
+                    <input type="email" name="email" class="form-input" placeholder="jean@exemple.com" required>
+                    <i class="fas fa-envelope input-icon"></i>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Courte biographie</label>
+                    <textarea name="bio" class="form-input" rows="4" placeholder="Parlez-nous de votre expérience..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Vos réseaux (Optionnel)</label>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <input type="url" name="linkedin_url" class="form-input" placeholder="URL LinkedIn" style="padding-left: 40px;">
+                        <input type="url" name="github_url" class="form-input" placeholder="URL GitHub" style="padding-left: 40px;">
+                        <input type="url" name="twitter_url" class="form-input" placeholder="URL Twitter / X" style="padding-left: 40px;">
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Envoyer ma candidature</span>
+                    <div class="loading-spinner"></div>
+                </button>
+            </form>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Retour au site</a>
+        </div>
+    </div>
+
+    <script>
+        // Prévisualisation de l'image
+        document.getElementById('photo-upload').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('preview-img').src = e.target.result;
+                }
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+
+        // Gestion de la soumission
+        document.getElementById('join-team-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('.submit-btn');
+            const originalText = btn.innerHTML;
+            
+            btn.classList.add('loading');
+            btn.disabled = true;
+
+            try {
+                // 1. Upload de l'image (si présente)
+                const fileInput = document.getElementById('photo-upload');
+                let photoUrl = '';
+
+                if (fileInput.files.length > 0) {
+                    const formData = new FormData();
+                    formData.append('file_upload', fileInput.files[0]);
+                    formData.append('directory', 'avatars');
+
+                    const uploadRes = await fetch('backend/upload_handler.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const uploadData = await uploadRes.json();
+
+                    if (!uploadData.success) throw new Error(uploadData.message);
+                    photoUrl = uploadData.data.filePath;
+                }
+
+                // 2. Envoi des données du formulaire
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+                
+                // Préparation du payload pour formulaireUser.php
+                const payload = {
+                    form_type: 'join_team',
+                    full_name: data.full_name,
+                    role: data.role,
+                    email: data.email,
+                    bio: data.bio,
+                    photo_url: photoUrl,
+                    linkedin_url: data.linkedin_url,
+                    github_url: data.github_url,
+                    twitter_url: data.twitter_url
+                };
+
+                const apiRes = await fetch('backend/formulaireUser.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const apiData = await apiRes.json();
+
+                if (apiData.success) {
+                    alert("Candidature envoyée avec succès ! Un administrateur validera votre profil bientôt.");
+                    this.reset();
+                    document.getElementById('preview-img').src = "https://via.placeholder.com/150?text=Photo";
+                    window.location.href = 'index.html';
+                } else {
+                    throw new Error(apiData.message);
+                }
+
+            } catch (error) {
+                console.error(error);
+                alert("Erreur : " + error.message);
+            } finally {
+                btn.classList.remove('loading');
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

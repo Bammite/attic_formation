@@ -3,12 +3,13 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>NetAcademy — Certification CCNA Cisco</title>
+	<title>Bammite — Certification CCNA Cisco</title>
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" href="css/navbar.css">
 	<link rel="stylesheet" href="css/general.css">
 	<link rel="stylesheet" href="css/footer.css">
+	
 	<style>
 		:root {
 			--cisco-blue: #049fd9;
@@ -660,6 +661,10 @@
 			}
 		}
 	</style>
+	<link rel="stylesheet" href="css/modal.css">
+
+	<!-- icon -->
+    <link rel="icon" type="image/svg+xml" href="./favico.ico">
 </head>
 <body>
 	<!-- Header -->
@@ -671,9 +676,10 @@
 			<div class="hero-text">
 				<h1>Devenez expert <span>réseaux Cisco</span> avec notre formation CCNA</h1>
 				<p>Acquérez les compétences techniques recherchées par les entreprises et obtenez votre certification CCNA avec l'accompagnement de nos experts réseaux.</p>
+				<p style="font-size: 2rem; font-weight: 800; color: var(--cisco-blue); margin-bottom: 30px;">25 000 FCFA seulement</p>
 				
 				<div class="button-group">
-					<a href="#inscription" class="btn-primary">
+					<a href="#" class="btn-primary open-ccna-modal-btn">
 						<span>Démarrer la formation</span>
 						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 							<path d="M5 12h14M12 5l7 7-7 7"/>
@@ -690,12 +696,12 @@
 				
 				<div class="stats-grid">
 					<div class="stat-item">
-						<div class="stat-number">2500+</div>
-						<div class="stat-label">Étudiants certifiés</div>
+						<div class="stat-number">100%</div>
+						<div class="stat-label">Pratique</div>
 					</div>
 					<div class="stat-item">
-						<div class="stat-number">94%</div>
-						<div class="stat-label">Taux de réussite</div>
+						<div class="stat-number">5</div>
+						<div class="stat-label">Mentorat</div>
 					</div>
 					<div class="stat-item">
 						<div class="stat-number">120h</div>
@@ -835,7 +841,7 @@
 					<div class="badge-icon">CCNA</div>
 					<div class="badge-title">Cisco Certified Network Associate</div>
 					<div class="badge-desc">La certification d'entrée de gamme Cisco qui valide les compétences d'installation, de configuration et de dépannage des réseaux.</div>
-					<button class="cta-button">En savoir plus</button>
+					<a href="https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccna/index.html" class="cta-button">En savoir plus</a>
 				</div>
 				
 				<div class="cert-benefits">
@@ -925,52 +931,76 @@
 		</div>
 	</section>
 
-	<!-- Témoignages -->
-	<section id="temoignages" class="section">
+	<!-- Projets Étudiants -->
+	<section id="projets" class="section">
 		<div class="container">
 			<div class="section-title">
-				<h2>Ils ont réussi leur CCNA</h2>
-				<p>Découvrez les témoignages de nos anciens étudiants maintenant professionnels en réseaux</p>
+				<h2>Projets Réalisés</h2>
+				<p>Concrétisez votre savoir. Voici le type de labs que vous maîtriserez à la fin de la formation.</p>
 			</div>
 			
-			<div class="testimonials-grid">
-				<div class="testimonial-card">
-					<div class="testimonial-text">
-						"Grâce à NetAcademy, j'ai obtenu mon CCNA en 3 mois seulement. Les labs pratiques étaient incroyablement réalistes et m'ont préparé parfaitement pour l'examen et mon travail actuel."
+			<div class="projects-grid">
+				<div class="project-card">
+					<div class="project-image">
+						<div class="project-overlay"><span class="project-tag">Architecture</span></div>
+						<img src="https://placehold.co/600x400/049fd9/ffffff?text=Reseau+Campus" alt="Architecture Réseau">
 					</div>
-					<div class="testimonial-author">
-						<div class="author-avatar">SM</div>
-						<div class="author-info">
-							<h5>Sarah Martin</h5>
-							<p>Ingénieure Réseau @Orange</p>
-						</div>
-					</div>
-				</div>
-				
-				<div class="testimonial-card">
-					<div class="testimonial-text">
-						"Les formateurs sont des experts du secteur toujours disponibles. Le programme est bien structuré et les supports de cours sont excellents. Je recommande à 100% !"
-					</div>
-					<div class="testimonial-author">
-						<div class="author-avatar">KB</div>
-						<div class="author-info">
-							<h5>Karim Benali</h5>
-							<p>Admin Réseau @Capgemini</p>
-						</div>
+					<div class="project-info">
+						<h3>Architecture Campus Sécurisée</h3>
+						<p>Conception complète d'un réseau d'entreprise multi-bâtiments avec VLANs, routage inter-VLAN et redondance.</p>
+						<div class="project-techs"><span>Cisco Packet Tracer</span><span>VLAN</span><span>OSPF</span></div>
 					</div>
 				</div>
 				
-				<div class="testimonial-card">
-					<div class="testimonial-text">
-						"Après 10 ans dans le support, j'ai voulu évoluer vers les réseaux. NetAcademy m'a donné toutes les compétences nécessaires. Aujourd'hui je suis responsable infrastructure."
+				<div class="project-card">
+					<div class="project-image">
+						<div class="project-overlay"><span class="project-tag">Sécurité</span></div>
+						<img src="https://placehold.co/600x400/2d3436/ffffff?text=VPN+Site-to-Site" alt="VPN">
 					</div>
-					<div class="testimonial-author">
-						<div class="author-avatar">LC</div>
-						<div class="author-info">
-							<h5>Laura Chen</h5>
-							<p>Responsable Infrastructure @BNP</p>
-						</div>
+					<div class="project-info">
+						<h3>Interconnexion VPN</h3>
+						<p>Configuration de tunnels VPN sécurisés pour relier le siège social aux filiales distantes.</p>
+						<div class="project-techs"><span>IPSec</span><span>GRE</span><span>ACLs</span></div>
 					</div>
+				</div>
+				
+				<div class="project-card">
+					<div class="project-image">
+						<div class="project-overlay"><span class="project-tag">Monitoring</span></div>
+						<img src="https://placehold.co/600x400/00b894/ffffff?text=Supervision+Reseau" alt="Monitoring">
+					</div>
+					<div class="project-info">
+						<h3>Supervision Réseau</h3>
+						<p>Mise en place d'un serveur de monitoring pour alerter sur l'état des équipements en temps réel.</p>
+						<div class="project-techs"><span>SNMP</span><span>Syslog</span><span>Wireshark</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Us -->
+	<section class="section bg-light">
+		<div class="container">
+			<div class="section-title">
+				<h2>Pourquoi choisir Bammite ?</h2>
+				<p>L'excellence technique avec un accompagnement humain.</p>
+			</div>
+			<div class="why-us-grid">
+				<div class="why-us-card">
+					<div class="why-icon"><i class="fas fa-user-friends"></i></div>
+					<h3>Suivi Ultra-Personnalisé</h3>
+					<p>Ici, vous n'êtes pas un numéro. Nous limitons nos promos pour connaître chaque élève et adapter notre pédagogie.</p>
+				</div>
+				<div class="why-us-card">
+					<div class="why-icon"><i class="fas fa-clock"></i></div>
+					<h3>Disponibilité 7j/7</h3>
+					<p>Nos mentors sont disponibles soirs et weekends pour vous débloquer sur vos labs et maintenir votre motivation.</p>
+				</div>
+				<div class="why-us-card">
+					<div class="why-icon"><i class="fas fa-rocket"></i></div>
+					<h3>Objectif Certification</h3>
+					<p>Nous vous préparons spécifiquement pour l'examen CCNA avec des examens blancs et des simulations intensives.</p>
 				</div>
 			</div>
 		</div>
@@ -980,8 +1010,9 @@
 	<section id="inscription" class="cta-section">
 		<div class="container">
 			<h2>Prêt à transformer votre carrière ?</h2>
-			<p>Rejoignez notre prochaine cohorte et bénéficiez d'un accompagnement personnalisé jusqu'à l'obtention de votre certification</p>
-			<a href="#" class="cta-button-large">
+			<p>Rejoignez notre prochaine cohorte et bénéficiez d'un accompagnement personnalisé jusqu'à l'obtention de votre certification.</p>
+			<p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; color: white;">Offre de lancement : 25 000 FCFA</p>
+			<a href="#" class="cta-button-large open-ccna-modal-btn">
 				<span>S'inscrire maintenant</span>
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 					<path d="M5 12h14M12 5l7 7-7 7"/>
@@ -1051,5 +1082,6 @@
 	<script src="js/navbar-generator.js"></script>
 	<script src="js/footer-generator.js"></script>
 	<script src="js/navbar.js"></script>
+	<script src="js/modal.js"></script>
 </body>
 </html>

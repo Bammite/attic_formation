@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="NetAcademy propose des formations en programmation personnalisées. Choisissez vos technologies et votre rythme d'apprentissage avec un mentor dédié." />
-    <title>NetAcademy — Formation Programmation à la Carte</title>
+    <meta name="description" content="Bammite propose des formations en programmation personnalisées. Choisissez vos technologies et votre rythme d'apprentissage avec un mentor dédié." />
+    <title>Bammite — Formation Programmation à la Carte</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
@@ -209,39 +209,6 @@
         .cta-button-large:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 184, 148, 0.3); }
 
         /* Nouvelles sections */
-        
-        /* Avantages */
-        .avantages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .avantage-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: var(--transition);
-        }
-
-        .avantage-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 184, 148, 0.1);
-        }
-
-        .avantage-icon {
-            width: 60px; height: 60px;
-            background: linear-gradient(135deg, var(--code-green), var(--code-blue));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: white;
-        }
 
         /* Parcours */
         .parcours-timeline {
@@ -439,6 +406,9 @@
             .step-number { width: 50px; height: 50px; margin-right: 20px; }
         }
     </style>
+
+        <!-- icon -->
+        <link rel="icon" type="image/svg+xml" href="./favico.ico">
 </head>
 <body>
     <!-- Navbar -->
@@ -504,34 +474,29 @@
         </div>
     </section>
 
-    <!-- Avantages -->
-    <section class="section">
+    <!-- Why Choose Us (Harmonisé) -->
+    <section class="section bg-light">
         <div class="container">
             <div class="section-header">
-                <h2>Nos Avantages Exclusifs</h2>
-                <p>Découvrez pourquoi nos étudiants réussissent et recommandent notre méthode.</p>
+                <h2>Pourquoi choisir Bammite ?</h2>
+                <p>Une approche pédagogique centrée sur la pratique et l'accompagnement.</p>
             </div>
             
-            <div class="avantages-grid">
-                <div class="avantage-card">
-                    <div class="avantage-icon"><i class="fas fa-user-tie"></i></div>
+            <div class="why-us-grid">
+                <div class="why-us-card">
+                    <div class="why-icon"><i class="fas fa-user-tie"></i></div>
                     <h3>Mentor Dédié</h3>
-                    <p>Un expert senior vous accompagne tout au long de votre parcours, disponible pour répondre à vos questions.</p>
+                    <p>Un expert senior vous accompagne tout au long de votre parcours, disponible pour répondre à vos questions et relire votre code.</p>
                 </div>
-                <div class="avantage-card">
-                    <div class="avantage-icon"><i class="fas fa-project-diagram"></i></div>
-                    <h3>Projets Réels</h3>
-                    <p>Appliquez vos connaissances sur des projets concrets qui enrichiront votre portfolio professionnel.</p>
-                </div>
-                <div class="avantage-card">
-                    <div class="avantage-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="why-us-card">
+                    <div class="why-icon"><i class="fas fa-calendar-alt"></i></div>
                     <h3>Flexibilité Totale</h3>
-                    <p>Organisez vos séances selon vos disponibilités, même le soir et le weekend.</p>
+                    <p>Organisez vos séances selon vos disponibilités. Apprenez à votre rythme, même le soir et le weekend.</p>
                 </div>
-                <div class="avantage-card">
-                    <div class="avantage-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>Certification</h3>
-                    <p>Obtenez une certification reconnue attestant de vos compétences techniques.</p>
+                <div class="why-us-card">
+                    <div class="why-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>100% Pratique</h3>
+                    <p>Pas de théorie inutile. Vous codez dès le premier jour sur des projets qui enrichiront votre portfolio.</p>
                 </div>
             </div>
         </div>
@@ -591,56 +556,53 @@
                     <div class="step-number">4</div>
                     <div class="step-content">
                         <h4>Validation & Certification</h4>
-                        <p>Évaluation finale sur un projet personnel et obtention de votre certification NetAcademy.</p>
+                        <p>Évaluation finale sur un projet personnel et obtention de votre certification Bammite.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Témoignages -->
-    <section class="section bg-light">
+    <!-- Projets -->
+    <section class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Témoignages</h2>
-                <p>Découvrez les expériences de nos étudiants qui ont transformé leur carrière.</p>
+                <h2>Projets Concrets</h2>
+                <p>Voici ce que vous serez capable de créer à la fin de votre formation.</p>
             </div>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "Grâce à NetAcademy, j'ai pu me reconvertir en développeur web en 6 mois. Mon mentor m'a guidé pas à pas et aujourd'hui je travaille en freelance."
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay"><span class="project-tag">Logiciel</span></div>
+                        <img src="https://placehold.co/600x400/0984e3/ffffff?text=Gestion+Stock" alt="App Gestion">
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><i class="fas fa-user"></i></div>
-                        <div>
-                            <strong>Marie Dubois</strong>
-                            <div style="font-size:0.9rem;color:var(--text-secondary)">Ancienne comptable, maintenant développeuse front-end</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "La flexibilité des horaires était essentielle pour moi qui travaille à temps plein. J'ai pu me spécialiser en Python pour la data science."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><i class="fas fa-user"></i></div>
-                        <div>
-                            <strong>Thomas Martin</strong>
-                            <div style="font-size:0.9rem;color:var(--text-secondary)">Ingénieur reconverti en data scientist</div>
-                        </div>
+                    <div class="project-info">
+                        <h3>Application de Gestion</h3>
+                        <p>Logiciel desktop de gestion de stock avec base de données locale et interface graphique.</p>
+                        <div class="project-techs"><span>Java/C++</span><span>SQL</span><span>JavaFX</span></div>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "Les projets concrets m'ont permis de constituer un portfolio solide. J'ai décroché mon premier emploi en tant que développeur Java avant même la fin de ma formation."
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay"><span class="project-tag">Automatisation</span></div>
+                        <img src="https://placehold.co/600x400/00b894/ffffff?text=Bot+Python" alt="Script Python">
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><i class="fas fa-user"></i></div>
-                        <div>
-                            <strong>Ahmed Benali</strong>
-                            <div style="font-size:0.9rem;color:var(--text-secondary)">Étudiant en informatique, maintenant développeur Java</div>
-                        </div>
+                    <div class="project-info">
+                        <h3>Bot d'Automatisation</h3>
+                        <p>Script Python pour récupérer des données web (scraping) et générer des rapports automatiques.</p>
+                        <div class="project-techs"><span>Python</span><span>Selenium</span><span>Pandas</span></div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay"><span class="project-tag">Web</span></div>
+                        <img src="https://placehold.co/600x400/6c5ce7/ffffff?text=API+Rest" alt="API">
+                    </div>
+                    <div class="project-info">
+                        <h3>API RESTful Sécurisée</h3>
+                        <p>Création du back-end d'une application mobile avec authentification et gestion des utilisateurs.</p>
+                        <div class="project-techs"><span>Node.js</span><span>Express</span><span>JWT</span></div>
                     </div>
                 </div>
             </div>
@@ -757,26 +719,26 @@
                 <p>Remplissez ce formulaire pour qu'un conseiller pédagogique vous contacte et établisse votre programme personnalisé.</p>
             </div>
             
-            <form id="contact-form" class="contact-form">
+            <form id="prog-page-form" class="contact-form">
                 <div class="form-row">
-                    <div class="form-group"><label>Nom complet</label><input type="text" required></div>
-                    <div class="form-group"><label>Email</label><input type="email" required></div>
+                    <div class="form-group"><label>Nom complet</label><input type="text" name="name" required></div>
+                    <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
                 </div>
                 <div class="form-group">
                     <label>Technologies souhaitées</label>
-                    <input type="text" placeholder="Ex: Python, React, Java...">
+                    <input type="text" name="technologies" placeholder="Ex: Python, React, Java...">
                 </div>
                 <div class="form-group">
                     <label>Votre objectif</label>
-                    <textarea rows="4" placeholder="Ex: Je veux créer une application mobile pour mon entreprise..."></textarea>
+                    <textarea name="objective" rows="4" placeholder="Ex: Je veux créer une application mobile pour mon entreprise..."></textarea>
                 </div>
                 <div class="form-group">
                     <label>Formule d'intérêt</label>
-                    <select>
+                    <select name="formula">
                         <option value="">Sélectionnez une option</option>
-                        <option value="decouverte">Découverte (299€/mois)</option>
-                        <option value="progression">Progression (499€/mois)</option>
-                        <option value="intensif">Intensif (799€/mois)</option>
+                        <option value="decouverte">Découverte (15 000 FCFA)</option>
+                        <option value="progression">Progression (25 000 FCFA/mois)</option>
+                        <option value="intensif">Intensif (100 000 FCFA/mois)</option>
                     </select>
                 </div>
                 <button type="submit" class="cta-button-large" style="width:100%">Demander mon programme</button>

@@ -3,12 +3,13 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>NetAcademy — Formations Web, Mobile & Logiciel</title>
+	<title>Bammite — Formations Web, Mobile & Logiciel</title>
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" href="css/navbar.css">
 	<link rel="stylesheet" href="css/general.css">
 	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/modal.css">
 	<style>
 		:root {
 			--dev-purple: #6c5ce7;
@@ -328,6 +329,8 @@
 			.methodology-grid { grid-template-columns: 1fr; }
 		}
 	</style>
+	<!-- icon -->
+    <link rel="icon" type="image/svg+xml" href="./favico.ico">
 </head>
 <body>
 	<!-- Header -->
@@ -340,7 +343,7 @@
 				<h1>Maîtrisez le Code : <span>Web, Mobile & Logiciel</span></h1>
 				<p>Une formation intensive et complète pour devenir un développeur polyvalent, capable de concevoir des solutions numériques de A à Z.</p>
 				<div class="button-group">
-					<a href="#inscription" class="btn-primary">Démarrer la formation</a>
+					<a href="#" class="btn-primary open-wml-modal-btn">Démarrer la formation</a>
 					<a href="#domaines" class="btn-secondary">Découvrir les modules</a>
 				</div>
 			</div>
@@ -494,12 +497,57 @@
 		</div>
 	</section>
 
+	<!-- Projets Étudiants -->
+	<section class="section bg-light">
+		<div class="container">
+			<div class="section-title">
+				<h2>Projets de Fin de Parcours</h2>
+				<p>Des réalisations concrètes qui prouvent vos compétences aux recruteurs.</p>
+			</div>
+			<div class="projects-grid">
+				<div class="project-card">
+					<div class="project-image">
+						<div class="project-overlay"><span class="project-tag">Web Full-Stack</span></div>
+						<img src="https://placehold.co/600x400/049fd9/ffffff?text=E-Commerce" alt="E-commerce">
+					</div>
+					<div class="project-info">
+						<h3>Marketplace Complète</h3>
+						<p>Plateforme de vente en ligne avec panier, paiement Stripe et dashboard administrateur.</p>
+						<div class="project-techs"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+					</div>
+				</div>
+				<div class="project-card">
+					<div class="project-image">
+						<div class="project-overlay"><span class="project-tag">Mobile</span></div>
+						<img src="https://placehold.co/600x400/8a2be2/ffffff?text=Uber+Clone" alt="Mobile App">
+					</div>
+					<div class="project-info">
+						<h3>App de VTC (Clone Uber)</h3>
+						<p>Application mobile de transport avec géolocalisation temps réel et calcul d'itinéraire.</p>
+						<div class="project-techs"><span>Flutter</span><span>Google Maps</span><span>Firebase</span></div>
+					</div>
+				</div>
+				<div class="project-card">
+					<div class="project-image">
+						<div class="project-overlay"><span class="project-tag">Logiciel</span></div>
+						<img src="https://placehold.co/600x400/2d3436/ffffff?text=SaaS+CRM" alt="SaaS">
+					</div>
+					<div class="project-info">
+						<h3>CRM d'Entreprise</h3>
+						<p>Logiciel de gestion de la relation client scalable et sécurisé pour PME.</p>
+						<div class="project-techs"><span>Python</span><span>PostgreSQL</span><span>Docker</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- CTA -->
 	<section id="inscription" class="cta-section">
 		<div class="container">
 			<h2>Prêt à coder votre avenir ?</h2>
 			<p>Les inscriptions pour la prochaine cohorte sont ouvertes. Places limitées.</p>
-			<a href="#" class="cta-button-large">S'inscrire maintenant</a>
+			<a href="#" class="cta-button-large open-wml-modal-btn">S'inscrire maintenant</a>
 		</div>
 	</section>
 
@@ -509,5 +557,6 @@
 	<script src="js/navbar-generator.js"></script>
 	<script src="js/footer-generator.js"></script>
 	<script src="js/navbar.js"></script>
+	<script src="js/modal.js"></script>
 </body>
 </html>

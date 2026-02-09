@@ -1,0 +1,67 @@
+# CAHIER DES CHARGES BACKEND - ATTIC ACADEMY
+
+## 1. DONNÉES DYNAMIQUES À CHARGER (API GET)
+
+### A. Global (Site Public)
+- **Navigation & Auth** : État de la session utilisateur (connecté/déconnecté, infos profil basiques).
+- **Footer** : Liens dynamiques ou infos de contact si modifiables.
+
+### B. Page d'Accueil (index.html)
+- **Statistiques** : Compteurs (Nombre d'étudiants, Taux de satisfaction, etc.).
+- **Projets Étudiants** : Titre, Image, Description, Tags technologiques (pour la section "Ce que nos étudiants créent").
+- **Équipe** : Liste des membres (Photo, Nom, Rôle, Bio, Liens sociaux).
+
+### C. Pages de Formation (Détails)
+- **Sessions** : Dates des prochaines rentrées, places disponibles.
+- **Tarifs** : Prix des différentes formules (Découverte, Progression, Intensif).
+- **FAQ** : Liste des questions/réponses spécifiques à chaque formation.
+
+### D. Espace Administration (admin/index.html)
+- **Dashboard** : KPIs (Utilisateurs actifs, Nouveaux inscrits, Revenus, etc.).
+- **Activité Récente** : Logs des dernières actions (inscriptions, paiements).
+- **Liste des Utilisateurs** : Table complète avec filtres.
+- **Liste des Membres** : Gestion de l'équipe pédagogique.
+- **Réponses Formulaires** : Liste des leads entrants (Contact, Besoins spécifiques).
+- **Inscriptions** : Suivi des dossiers de candidature.
+
+---
+
+## 2. FORMULAIRES À GÉRER (API POST/PUT)
+
+### A. Authentification (auth/auth.html)
+1. **Connexion** (`.login-form`)
+   - Données : Email, Mot de passe, "Se souvenir de moi".
+2. **Inscription** (`.register-form`)
+   - Données : Nom complet, Email, Mot de passe, Confirmation, Objectif d'apprentissage.
+3. **Mot de passe oublié** (Lien)
+   - Données : Email (pour envoi du lien de réinitialisation).
+
+### B. Formulaires Publics (Pages & Modals)
+4. **Contact / Inscription Rapide** (Présent sur index.html, web-mobile-logiciel.html, etc.)
+   - ID HTML : `#contact-form`
+   - Données : Nom, Email, Formation souhaitée, Message/Motivation.
+
+5. **Formation à la Carte** (Modal)
+   - ID HTML : `#modal-form`
+   - Données : Domaine (Techno), Nom, Email, Téléphone, Préférence (En ligne/Présentiel), Source (Où nous avez-vous connu).
+
+6. **Candidature Grande Rentrée** (Modal & Page dédiée)
+   - ID HTML : `#rentree-modal-form` (Modal) ou `#contact-form` (Page Grande Rentrée)
+   - Données : Nom, Email, Téléphone, Motivation, Type de financement.
+
+7. **Besoin Spécifique** (Modal "Que voulez-vous apprendre ?")
+   - ID HTML : `#besoin-modal-form`
+   - Données : Nom, Email, Description détaillée du besoin.
+
+### C. Espace Administration
+8. **Créer un Utilisateur**
+   - ID HTML : `#add-user-form`
+   - Données : Username, Email, Password, Rôle, Attributs (Dev/Étudiant).
+
+9. **Ajouter un Membre d'Équipe** (Modal Admin)
+   - ID HTML : `#member-form`
+   - Données : Nom, Email, Rôle, Spécialité, Permissions.
+
+10. **Modifier Mot de Passe Admin**
+    - ID HTML : `#password-form`
+    - Données : Ancien mot de passe, Nouveau mot de passe.

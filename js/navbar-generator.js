@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <nav class="glass-nav">
         <div class="container">
             <a href="index.html" class="logo">
-                <div class="logo-icon">A</div>
-                <div class="logo-text">Attic<span>Academy</span></div>
+                <div class="logo-icon"><img src="./assets/svg/logo.svg" alt="bammite_logo" class="logo-placeholder"></div>
             </a>
 
             <div class="mobile-menu-btn">
@@ -20,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             <a href="#">Formations <i class="fas fa-chevron-down"></i></a>
                         </li>
                         <li><a href="./grande-rentree-fullstack.html">Grande Rentrée</a></li>
-                        <li><a href="#parcours">Coût des formation</a></li>
-                        <li><a href="#temoignages">Equipe</a></li>
+                        <li><a href="./formation-programmation.html">Programmation</a></li>
+                        <li><a href="index.html#equipe">Equipe</a></li>
                         <li><a href="#inscription" class="nav-cta">S'inscrire</a></li>
                     </ul>
                 </div>

@@ -4,31 +4,31 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>NetAcademy — Formations Tech: Web, Mobile, Logiciel & Plus</title>
+    <title>Bammite — Formations Tech: Web, Mobile, Logiciel & Plus</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css"> 
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/modal.css">
-    <style>
-        /* Le contenu de ce style a été déplacé dans css/index.css */
-        /* Ce bloc peut être supprimé si css/index.css est bien chargé. */
-    </style>
+    <!-- icon -->
+    <link rel="icon" type="image/svg+xml" href="./favico.ico">
+
 </head>
 
 <body>
     <!-- Header -->
     <div id="navbar-placeholder"></div>
-
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-text">
-                <h1>Formez-vous aux <span class="linear-gradient">technologies d'avenir</span> avec <span class="surBriance">AtticAcademy</span> </h1>
+                <h1>Formez-vous aux <span class="linear-gradient">technologies d'avenir</span> avec <span class="surBriance">Bammite</span> </h1>
                 <p>Développez vos compétences en développement web, mobile, logiciel, Python et administration de bases
                     de données avec nos formations certifiantes et nos experts du secteur.</p>
 
@@ -101,12 +101,55 @@
         </div>
     </section>
 
+    <!-- Partners/Alumni Section -->
+    <section class="partners-section">
+        <div class="container">
+            <p class="partners-title">Maîtrisez les technologies les plus demandées du marché</p>
+            <div class="partners-grid">
+                <div class="partner-logo"><i class="fab fa-react"></i> React</div>
+                <div class="partner-logo"><i class="fab fa-python"></i> Python</div>
+                <div class="partner-logo"><i class="fab fa-docker"></i> Docker</div>
+                <div class="partner-logo"><i class="fab fa-js"></i> JavaScript</div>
+                <div class="partner-logo"><i class="fab fa-java"></i> Java</div>
+                <div class="partner-logo"><i class="fas fa-database"></i> SQL</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pourquoi choisir Bammite ?</h2>
+                <p>L'excellence d'une école technique, la proximité d'un mentorat privé.</p>
+            </div>
+            <div class="why-us-grid">
+                <div class="why-us-card">
+                    <div class="why-icon"><i class="fas fa-user-friends"></i></div>
+                    <h3>Suivi Ultra-Personnalisé</h3>
+                    <p>Ici, vous n'êtes pas un numéro. Nous limitons nos promos pour connaître chaque élève et adapter notre pédagogie à son rythme d'apprentissage.</p>
+                </div>
+                <div class="why-us-card">
+                    <div class="why-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Disponibilité 7j/7</h3>
+                    <p>Le code n'attend pas le lundi matin. Nos mentors sont disponibles soirs et weekends pour vous débloquer et maintenir votre motivation.</p>
+                </div>
+                <div class="why-us-card">
+                    <div class="why-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Objectif Emploi</h3>
+                    <p>Nous ne vous lâchons pas dans la nature. Refonte de CV, simulation d'entretiens et mise en relation avec notre réseau jusqu'à l'embauche.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Grande Rentrée Section -->
     <section id="rentree" class="grand-rentree">
         <div class="container">
             <h2>Grande Rentrée juin 2026</h2>
             <p>Rejoignez notre session de rentrée et spécialisez-vous dans les technologies les plus demandées du marché
-                avec nos formations intensives en développement web, mobile et logiciel.</p>
+                avec nos formations intensives en développement web, mobile et logiciel.<br>
+                <strong style="font-size: 1.4rem; display: block; margin-top: 15px; color: #ffd700;">21 500 FCFA seulement</strong></p>
 
             <div class="rentree-grid">
                 <div class="rentree-card">
@@ -175,7 +218,7 @@
                                 </svg>
                                 6 Mois
                             </div>
-                            <a href="#" class="course-link">
+                            <a href="./web-mobile-logiciel.html" class="course-link">
                                 Programme détaillé
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
@@ -215,7 +258,7 @@
                                 </svg>
                                 6 Mois
                             </div>
-                            <a href="#" class="course-link">
+                            <a href="./web-mobile-logiciel.html" class="course-link">
                                 Programme détaillé
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
@@ -229,20 +272,19 @@
                     </div>
                 </div>
 
-                <!-- Python -->
+                <!-- Bureautique -->
                 <div class="formation-detailed-item">
                     <div class="formation-content">
-                        <h3>Python & Data Science</h3>
-                        <p>Plongez au coeur de la data. Apprenez à manipuler, analyser et visualiser les données avec
-                            Python, le langage de référence pour l'intelligence artificielle.</p>
+                        <h3>Bureautique & Productivité</h3>
+                        <p>Maîtrisez les outils indispensables en entreprise. Devenez expert sur Word, Excel et PowerPoint pour booster votre productivité et votre employabilité.</p>
 
                         <div class="formation-modules">
-                            <div class="module-item"><span class="module-icon">✓</span> Python Avancé</div>
-                            <div class="module-item"><span class="module-icon">✓</span> Pandas & NumPy</div>
-                            <div class="module-item"><span class="module-icon">✓</span> Data Visualization</div>
-                            <div class="module-item"><span class="module-icon">✓</span> Machine Learning Basics</div>
-                            <div class="module-item"><span class="module-icon">✓</span> Web Scraping</div>
-                            <div class="module-item"><span class="module-icon">✓</span> Automatisation</div>
+                            <div class="module-item"><span class="module-icon">✓</span> Word : Mise en page pro</div>
+                            <div class="module-item"><span class="module-icon">✓</span> Excel : Formules & TCD</div>
+                            <div class="module-item"><span class="module-icon">✓</span> PowerPoint : Présentations</div>
+                            <div class="module-item"><span class="module-icon">✓</span> Outils Collaboratifs</div>
+                            <div class="module-item"><span class="module-icon">✓</span> Gestion de projet</div>
+                            <div class="module-item"><span class="module-icon">✓</span> Certification TOSA</div>
                         </div>
 
                         <div class="course-footer">
@@ -252,9 +294,9 @@
                                     <circle cx="12" cy="12" r="10" />
                                     <polyline points="12 6 12 12 16 14" />
                                 </svg>
-                                4 Mois
+                                3 Mois
                             </div>
-                            <a href="#" class="course-link">
+                            <a href="./formation-bureautique.html" class="course-link">
                                 Programme détaillé
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
@@ -264,7 +306,7 @@
                         </div>
                     </div>
                     <div class="formation-image">
-                        <img src="./assets/image/Python-Data-Science.webp" alt="formation Python et Data Science">
+                        <img src="./assets/image/f-bureautique-featured-img.png" alt="Formation Bureautique">
                     </div>
                 </div>
 
@@ -294,7 +336,7 @@
                                 </svg>
                                 5 Mois
                             </div>
-                            <a href="#" class="course-link">
+                            <a href="./formation-programmation.html" class="course-link">
                                 Programme détaillé
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
@@ -334,7 +376,7 @@
                                 </svg>
                                 6 Mois
                             </div>
-                            <a href="#" class="course-link">
+                            <a href="./formation-programmation.html" class="course-link">
                                 Programme détaillé
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
@@ -375,7 +417,7 @@
                                 </svg>
                                 6 Mois
                             </div>
-                            <a href="#" class="course-link">
+                            <a href="./reseaux-ccna.html" class="course-link">
                                 Programme détaillé
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
@@ -405,7 +447,7 @@
                 <div class="course-card">
                     <div class="course-header">
                         <div class="course-icon">🔗</div>
-                        <h3>Réseaux Fondamentaux</h3>
+                        <h3>Commencer de zéro</h3>
                         <p>Modèle OSI, TCP/IP et architecture réseau</p>
                         <span class="course-level">Débutant</span>
                     </div>
@@ -417,14 +459,14 @@
                             </svg>
                             1.5 Mois
                         </div>
-                        <a href="#" class="course-link">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+                        <a href="./reseaux-ccna.html" class="course-link">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
                     </div>
                 </div>
 
                 <div class="course-card">
                     <div class="course-header">
-                        <div class="course-icon">☁️</div>
-                        <h3>Infrastructure Cloud</h3>
+                        <div class="course-icon">🛜</div>
+                        <h3>Réseaux Fondamentaux</h3>
                         <p>AWS, Azure et Google Cloud Platform</p>
                         <span class="course-level">Intermédiaire</span>
                     </div>
@@ -436,7 +478,7 @@
                             </svg>
                             2 Mois
                         </div>
-                        <a href="#" class="course-link">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+                        <a href="./reseaux-ccna.html" class="course-link">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
                     </div>
                 </div>
 
@@ -455,7 +497,7 @@
                             </svg>
                             2 Mois
                         </div>
-                        <a href="#" class="course-link">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+                        <a href="./reseaux-ccna.html" class="course-link">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
                     </div>
                 </div>
             </div>
@@ -486,7 +528,7 @@
                             </svg>
                             2.5 Mois
                         </div>
-                        <a href="#" class="course-link">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+                        <a href="./reseaux-ccna.html" class="course-link">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
                     </div>
                 </div>
 
@@ -505,7 +547,7 @@
                             </svg>
                             2 Mois
                         </div>
-                        <a href="#" class="course-link">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+                        <a href="./reseaux-ccna.html" class="course-link">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
                     </div>
                 </div>
 
@@ -524,7 +566,7 @@
                             </svg>
                             1.5 Mois
                         </div>
-                        <a href="#" class="course-link">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+                        <a href="./reseaux-ccna.html" class="course-link">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
                     </div>
                 </div>
             </div>
@@ -579,56 +621,76 @@
         </div>
     </section>
 
-    <!-- Témoignages -->
-    <section id="temoignages" class="section">
+    <!-- Student Projects Section -->
+    <section id="projets" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Ils ont transformé leur carrière</h2>
-                <p>Découvrez les témoignages de nos anciens étudiants maintenant professionnels dans l'IT</p>
+                <h2>Ce que nos étudiants créent</h2>
+                <p>Pas de théorie abstraite. Voici des exemples concrets de projets réalisés par nos élèves en fin de parcours.</p>
             </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Grâce à la formation Développement Web de NetAcademy, j'ai pu me reconvertir
-                        professionnellement en seulement 6 mois. Aujourd'hui, je travaille comme développeur front-end
-                        dans une startup parisienne."
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-tag">Web Full-Stack</span>
+                        </div>
+                        <img src="https://placehold.co/600x400/049fd9/ffffff?text=E-Commerce+Platform" alt="Projet E-commerce">
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SM</div>
-                        <div class="author-info">
-                            <h5>Sarah Martin</h5>
-                            <p>Développeuse Front-end @StartupTech</p>
+                    <div class="project-info">
+                        <h3>Plateforme E-Commerce</h3>
+                        <p>Clone complet d'Amazon avec gestion de panier, paiement sécurisé et dashboard administrateur.</p>
+                        <div class="project-techs">
+                            <span>React</span><span>Node.js</span><span>MongoDB</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "La formation Python & Data Science m'a donné toutes les compétences nécessaires pour mon poste
-                        actuel. Les projets pratiques étaient particulièrement utiles pour mon portfolio."
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-tag">Mobile</span>
+                        </div>
+                        <img src="https://placehold.co/600x400/8a2be2/ffffff?text=App+Livraison" alt="Projet Mobile">
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">KB</div>
-                        <div class="author-info">
-                            <h5>Karim Benali</h5>
-                            <p>Data Scientist @DataCorp</p>
+                    <div class="project-info">
+                        <h3>App de Livraison</h3>
+                        <p>Application mobile iOS/Android de livraison de repas avec géolocalisation en temps réel.</p>
+                        <div class="project-techs">
+                            <span>Flutter</span><span>Firebase</span><span>Google Maps</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Après la formation Développement Mobile, j'ai pu créer mon application qui compte maintenant
-                        plus de 50 000 téléchargements. L'accompagnement des formateurs était exceptionnel."
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-tag">Data Science</span>
+                        </div>
+                        <img src="https://placehold.co/600x400/00b894/ffffff?text=Dashboard+Finance" alt="Projet Data">
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">LC</div>
-                        <div class="author-info">
-                            <h5>Laura Chen</h5>
-                            <p>Développeuse Mobile indépendante</p>
+                    <div class="project-info">
+                        <h3>Dashboard Financier</h3>
+                        <p>Outil d'analyse de données boursières avec visualisation interactive et prédictions par IA.</p>
+                        <div class="project-techs">
+                            <span>Python</span><span>Pandas</span><span>Streamlit</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipe -->
+    <section id="equipe" class="section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Rencontrez nos experts</h2>
+                <p>Une équipe de passionnés dédiés à votre réussite professionnelle.</p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Chargement dynamique via JS -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--code-blue);"></i>
+                    <p style="margin-top: 10px; color: var(--text-secondary);">Chargement de l'équipe...</p>
                 </div>
             </div>
         </div>
@@ -641,7 +703,7 @@
                 <h2>Contactez-nous pour vous inscrire</h2>
                 <p>Remplissez le formulaire pour recevoir la brochure et être contacté par notre équipe d'admission.</p>
             </div>
-            <form id="contact-form" class="contact-form" novalidate>
+            <form id="home-contact-form" class="contact-form" novalidate>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Nom complet</label>
@@ -671,7 +733,7 @@
                     <label for="message">Votre message (optionnel)</label>
                     <textarea id="message" name="message" rows="4"></textarea>
                 </div>
-                <button type="submit" class="cta-button-large" id="submit-btn" disabled>Envoyer ma demande</button>
+                <button type="submit" class="cta-button-large" id="submit-btn">Envoyer ma demande</button>
             </form>
         </div>
     </section>
@@ -752,72 +814,58 @@
             animateOnScroll.observe(el);
         });
 
-        // --- Form Validation Logic ---
-        const form = document.getElementById('contact-form');
-        const nameInput = document.getElementById('name');
-        const emailInput = document.getElementById('email');
-        const formationSelect = document.getElementById('formation');
-        const submitBtn = document.getElementById('submit-btn');
+        // Chargement dynamique de l'équipe
+        document.addEventListener('DOMContentLoaded', function() {
+            const teamContainer = document.querySelector('.team-grid');
+            if (teamContainer) {
+                fetch('backend/public_api.php?action=get_team')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            teamContainer.innerHTML = ''; // Effacer le loader
+                            
+                            if (data.data.length === 0) {
+                                teamContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Aucun membre à afficher pour le moment.</p>';
+                                return;
+                            }
 
-        const validators = {
-            name: {
-                validate: (value) => value.trim().length > 2,
-                message: "Le nom doit contenir au moins 3 caractères."
-            },
-            email: {
-                validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
-                message: "Veuillez entrer une adresse e-mail valide."
-            },
-            formation: {
-                validate: (value) => value !== "",
-                message: "Veuillez choisir une formation."
+                            data.data.forEach(member => {
+                                // Gestion de l'image (placeholder si vide)
+                                const photoUrl = member.photo_url || './assets/image/user-default.png';
+                                
+                                // Construction des liens sociaux
+                                let socialHtml = '';
+                                if (member.linkedin_url) socialHtml += `<a href="${member.linkedin_url}" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>`;
+                                if (member.github_url) socialHtml += `<a href="${member.github_url}" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>`;
+                                if (member.twitter_url) socialHtml += `<a href="${member.twitter_url}" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>`;
+
+                                const card = document.createElement('div');
+                                card.className = 'team-card';
+                                card.innerHTML = `
+                                    <div class="member-image">
+                                        <img src="${photoUrl}" alt="${member.full_name}" onerror="this.src='./assets/image/user-default.png';">
+                                    </div>
+                                    <div class="member-info">
+                                        <h3>${member.full_name}</h3>
+                                        <p class="role">${member.role}</p>
+                                        <p class="bio">${member.bio || ''}</p>
+                                        <div class="social-links">
+                                            ${socialHtml}
+                                        </div>
+                                    </div>
+                                `;
+                                teamContainer.appendChild(card);
+                            });
+                        } else {
+                            teamContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: red;">Impossible de charger l\'équipe.</p>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erreur:', error);
+                        teamContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: red;">Une erreur est survenue.</p>';
+                    });
             }
-        };
-
-        function validateField(input) {
-            const validator = validators[input.name];
-            if (!validator) return true;
-
-            const isValid = validator.validate(input.value);
-            const formGroup = input.parentElement;
-            const errorDiv = formGroup.querySelector('.error-message');
-
-            if (!isValid) {
-                formGroup.classList.add('invalid');
-                errorDiv.textContent = validator.message;
-            } else {
-                formGroup.classList.remove('invalid');
-                errorDiv.textContent = "";
-            }
-            return isValid;
-        }
-
-        function checkFormValidity() {
-            const isNameValid = validateField(nameInput);
-            const isEmailValid = validateField(emailInput);
-            const isFormationValid = validateField(formationSelect);
-            
-            submitBtn.disabled = !(isNameValid && isEmailValid && isFormationValid);
-        }
-
-        if (form) {
-            [nameInput, emailInput, formationSelect].forEach(input => {
-                input.addEventListener('input', () => validateField(input));
-                input.addEventListener('blur', () => validateField(input)); // Validate on blur too
-                input.addEventListener('input', checkFormValidity);
-            });
-
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const isFormValid = !submitBtn.disabled;
-                
-                if (isFormValid) {
-                    alert('Formulaire envoyé avec succès ! (Ceci est une simulation)');
-                    form.reset();
-                    submitBtn.disabled = true;
-                }
-            });
-        }
+        });
     </script>
     <script src="js/navbar-generator.js"></script>
     <script src="js/footer-generator.js"></script>
