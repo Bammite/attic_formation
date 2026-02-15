@@ -1,0 +1,28 @@
+# Robots.txt pour Bammite Formation
+# Permet aux moteurs de recherche d'accéder aux pages publiques
+
+User-agent: *
+Allow: /
+Allow: /*.html
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+
+# Interdire l'accès aux répertoires sensibles
+Disallow: /admin/
+Disallow: /backend/
+Disallow: /auth/
+Disallow: /uploads/
+Disallow: /equipement/
+
+# Pages spécifiques
+Disallow: /*.php
+
+# Délai de crawl - être respectueux des ressources serveur
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://bammite.cm/sitemap.xml
+
+# Google Search Console
+Sitemap: https://bammite.cm/sitemap.xml

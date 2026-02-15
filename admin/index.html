@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bammite — Administration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <!-- icon -->
+    <link rel="icon" type="image/svg+xml" href="./favico.ico">
+</head>
+<body>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <h2>Bammite</h2>
+            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Panel Administrateur</p>
+            
+            <div class="admin-info">
+                <div class="admin-avatar">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div>
+                    <div class="admin-name">Admin Principal</div>
+                    <div class="admin-role">Super Administrateur</div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-section="dashboard">
+                <i class="fas fa-tachometer-alt"></i>
+                <span class="nav-label">Tableau de bord</span>
+            </a>
+            
+            <a href="#" class="nav-item" data-section="members">
+                <i class="fas fa-users"></i>
+                <span class="nav-label">Équipe</span>
+                <span class="badge">0</span>
+            </a>
+            
+            <a href="#" class="nav-item" data-section="forms">
+                <i class="fas fa-file-alt"></i>
+                <span class="nav-label">Formulaires</span>
+                <span class="badge">0</span>
+            </a>
+            
+            <a href="#" class="nav-item" data-section="registrations">
+                <i class="fas fa-user-graduate"></i>
+                <span class="nav-label">Candidatures</span>
+                <span class="badge">0</span>
+            </a>
+            
+            <a href="#" class="nav-item" data-section="password">
+                <i class="fas fa-key"></i>
+                <span class="nav-label">Mot de passe</span>
+            </a>
+            
+            <a href="../index.html" target="_blank" class="external-link">
+                <i class="fas fa-external-link-alt"></i>
+                <span class="nav-label">Voir le site</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Déconnexion</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <h1 class="page-title">
+                <i class="fas fa-tachometer-alt"></i>
+                <span id="page-title">Tableau de bord</span>
+            </h1>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Total Candidatures</div>
+                </div>
+                
+                <div class="stat-card red">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Messages Contact</div>
+                </div>
+                
+                <div class="stat-card orange">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Besoins Spécifiques</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="content-section active">
+            <div class="dashboard-grid">
+                <!-- Recent Activity -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Dernières réceptions</h3>
+                        <button class="card-action">Voir tout</button>
+                    </div>
+                    
+                    <ul class="recent-list">
+                        <li class="recent-item">
+                            <div class="item-content" style="text-align: center; color: var(--text-secondary); padding: 20px;">
+                                Aucune nouvelle demande pour le moment.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Forms Overview -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Vue d'ensemble des formulaires</h3>
+                    </div>
+                    
+                    <div class="form-stat-grid">
+                        <div class="form-stat-item">
+                            <div class="form-stat-label">Grande Rentrée</div>
+                            <div class="form-stat-count" style="color: var(--admin-blue);">0</div>
+                        </div>
+                        <div class="form-stat-item">
+                            <div class="form-stat-label">Formation à la carte</div>
+                            <div class="form-stat-count" style="color: var(--admin-green);">0</div>
+                        </div>
+                        <div class="form-stat-item">
+                            <div class="form-stat-label">Besoins Spécifiques</div>
+                            <div class="form-stat-count" style="color: var(--admin-orange);">0</div>
+                        </div>
+                        <div class="form-stat-item">
+                            <div class="form-stat-label">Contact Général</div>
+                            <div class="form-stat-count" style="color: var(--admin-purple);">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Members Section -->
+        <section id="members" class="content-section">
+            <div class="card-header" style="margin-bottom: 30px;">
+                <h2 style="font-size: 1.8rem;">Gestion de l'équipe</h2>
+                <button class="btn btn-primary" id="add-member-btn">
+                    <i class="fas fa-plus"></i>
+                    Ajouter un membre
+                </button>
+            </div>
+
+            <div class="data-table">
+                <div class="table-header">
+                    <div>Nom</div>
+                    <div>Rôle</div>
+                    <div>Email</div>
+                    <div>Date d'ajout</div>
+                    <div>Statut</div>
+                    <div>Actions</div>
+                </div>
+                
+                <div class="table-row">
+                    <div>Jean Dupont</div>
+                    <div><span class="status-badge status-active">Formateur</span></div>
+                    <div>jean@Bammite.com</div>
+                    <div>12/05/2024</div>
+                    <div><span class="status-badge status-completed">Actif</span></div>
+                    <div class="action-buttons">
+                        <button class="btn-icon btn-edit edit-member-btn" title="Modifier">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn-icon btn-delete" title="Supprimer">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forms Section -->
+        <section id="forms" class="content-section">
+            <h2 style="font-size: 1.8rem; margin-bottom: 30px;">Réponses aux formulaires</h2>
+
+            <div class="data-table">
+                <div class="table-header">
+                    <div>Email</div>
+                    <div>Sujet/Tech</div>
+                    <div>Date</div>
+                    <div>Statut</div>
+                    <div>Actions</div>
+                </div>
+                <!-- Les lignes de données seront chargées par JS -->
+            </div>
+        </section>
+
+        <!-- Registrations Section -->
+        <section id="registrations" class="content-section">
+            <h2 style="font-size: 1.8rem; margin-bottom: 30px;">Candidatures Grande Rentrée</h2>
+
+            <div class="data-table">
+                <div class="table-header">
+                    <div>Nom</div>
+                    <div>Email</div>
+                    <div>Financement</div>
+                    <div>Date</div>
+                    <div>Statut</div>
+                    <div>Actions</div>
+                </div>
+                
+                <div class="table-row">
+                    <div>Thomas Anderson</div>
+                    <div>neo@matrix.com</div>
+                    <div>CPF</div>
+                    <div>Hier</div>
+                    <div><span class="status-badge status-active">En cours</span></div>
+                    <div class="action-buttons">
+                        <button class="btn-icon btn-view view-details-btn" data-type="candidature" title="Voir dossier">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn-icon btn-edit">
+                            <i class="fas fa-check"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Ajout/Modif Membre -->
+    <div id="member-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="member-modal-title">Ajouter un membre</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="member-form">
+                <input type="hidden" id="member-id" name="id">
+                <input type="hidden" id="member-photo-url" name="photo_url">
+                <div class="form-group">
+                    <label class="form-label">Nom complet</label>
+                    <input type="text" class="form-input" id="member-name" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Rôle</label>
+                        <input type="text" class="form-input" id="member-role" placeholder="Ex: Formateur React" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" id="member-email" required>
+                    </div>
+                </div>
+                
+                <!-- Upload Photo -->
+                <div class="form-group">
+                    <label class="form-label">Photo de profil</label>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <input type="file" class="form-input" id="member-photo-upload" accept="image/*">
+                        <div id="photo-preview" style="width: 40px; height: 40px; border-radius: 50%; background: #eee; background-size: cover; background-position: center; display: none;"></div>
+                    </div>
+                    <small style="color: var(--text-secondary);">Formats acceptés : JPG, PNG, WEBP. Max 5Mo.</small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Bio</label>
+                    <textarea class="form-textarea" id="member-bio" rows="3" style="min-height: 80px;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Réseaux & Liens</label>
+                    <div class="social-input-group">
+                        <i class="fab fa-linkedin"></i>
+                        <input type="url" id="member-linkedin" placeholder="Profil LinkedIn">
+                    </div>
+                    <div class="social-input-group">
+                        <i class="fab fa-github"></i>
+                        <input type="url" id="member-github" placeholder="Profil GitHub">
+                    </div>
+                    <div class="social-input-group">
+                        <i class="fab fa-twitter"></i>
+                        <input type="url" id="member-twitter" placeholder="Profil Twitter / X">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Ordre d'affichage</label>
+                        <input type="number" class="form-input" id="member-order" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Visibilité</label>
+                        <select class="form-input" id="member-visible">
+                            <option value="1">Visible</option>
+                            <option value="0">Masqué</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary modal-close-btn">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Détails (Lecture seule) -->
+    <div id="details-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="details-title">Détails</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div id="details-content" data-id="" data-type="">
+                <!-- Contenu injecté par JS -->
+                <div class="detail-row">
+                    <div class="detail-label">Nom</div>
+                    <div class="detail-value">Chargement...</div>
+                </div>
+            </div>
+            <div class="form-actions" id="details-modal-actions">
+                <button type="button" class="btn btn-secondary modal-close-btn">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

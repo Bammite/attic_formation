@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <div class="logo-icon">A</div>
-                        <div class="logo-text">Attic<span>Academy</span></div>
+                        <img src="./assets/svg/iconeFondBlanc.svg" alt="icone_bammite" class="logo-placeholder">
+                        <img src="./assets/svg/logoblanc.svg" alt="logo_bammite" class="logo-placeholder">
                     </div>
                     <p class="footer-desc">
                         Bammite est un centre de formation tech innovant.
@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="footer-links">
                     <h4>Formations</h4>
                     <ul>
-                        <li><a href="web-mobile-logiciel.html#web">Développement Web</a></li>
-                        <li><a href="#">Python & Data Science</a></li>
-                        <li><a href="#">Administration BDD</a></li>
+                        <li><a href="reseaux-ccna.html">Réseaux</a></li>
+                        <li><a href="formation-bureautique.html">Bureautique</a></li>
+                        <li><a href="formation-programmation.html">Administration BDD</a></li>
                         <li><a href="web-mobile-logiciel.html#mobile">Développement Mobile</a></li>
                         <li><a href="web-mobile-logiciel.html#logiciel">Génie Logiciel</a></li>
                     </ul>
@@ -38,10 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="footer-links">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:info@Bammite.fr">info@Bammite.fr</a></li>
+                        <li><a href="mailto:contact@bammite.com">contact@bammite.com</a></li>
                         <li><a href="tel:+221709442677">+221 70 944 26 77</a></li>
-                        <li><a href="#">Eligibilité CPF</a></li>
-                        <li><a href="#">Demande de brochure</a></li>
+                        <li><a href="mailto:contact@bammite.com">Demande de brochure</a></li>
                     </ul>
                 </div>
             </div>

@@ -797,7 +797,7 @@ body {
 }
 
 .cta-button-large {
-    background: white;
+    background: rgb(0, 0, 0);
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -810,10 +810,7 @@ body {
     align-items: center;
     gap: 12px;
     transition: all 0.3s;
-    border: 2px solid transparent;
-    background-clip: padding-box, border-box;
-    background-origin: border-box;
-    border-image: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%) 1;
+    border: 2px solid rgb(0, 64, 255);
 }
 
 .cta-button-large:hover {

@@ -4,7 +4,71 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Formations tech à Yaoundé : développement web, mobile, logiciel, Python, BDD et réseaux CCNA. Mentors experts, suivi personnalisé 7j/7, certification professionnelle. Rejoignez Bammite dès aujourd'hui." />
+    <meta name="keywords" content="formation web, formation mobile, formation programmation, formation python, formation BDD, formation réseaux CCNA, Yaoundé" />
+    <meta name="author" content="Bammite" />
+    <meta name="theme-color" content="#00b894" />
+    <meta property="og:title" content="Bammite — Formations Tech: Web, Mobile, Logiciel & Plus" />
+    <meta property="og:description" content="Devenez développeur web, mobile ou logiciel avec Bammite. Formations intensives avec mentors experts, suivi 7j/7, placement en emploi garanti." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bammite.cm/" />
+    <meta property="og:image" content="https://bammite.cm/assets/image/banniere-developpement-applications_33099-1720.avif" />
+    <meta property="og:site_name" content="Bammite Formation" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bammite — Formations Tech à Yaoundé" />
+    <meta name="twitter:description" content="Formations professionnelles en développement web, mobile et logiciel. Experts du secteur. 96% de satisfaction client." />
+    <meta name="twitter:image" content="https://bammite.cm/assets/image/banniere-developpement-applications_33099-1720.avif" />
+    <link rel="canonical" href="https://bammite.cm/" />
     <title>Bammite — Formations Tech: Web, Mobile, Logiciel & Plus</title>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Bammite Formation",
+      "url": "https://bammite.cm",
+      "logo": "https://bammite.cm/assets/image/banniere-developpement-applications_33099-1720.avif",
+      "description": "École de formation technologique proposant des formations en développement web, mobile, logiciel, Python et administration de bases de données.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CM",
+        "addressLocality": "Yaoundé"
+      },
+      "sameAs": [
+        "https://www.facebook.com/bammite",
+        "https://twitter.com/bammite",
+        "https://www.linkedin.com/company/bammite"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "availableLanguage": ["fr", "en"]
+      }
+    }
+    </script>
+    
+    <!-- JSON-LD Course Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Formation Développement Web, Mobile et Logiciel",
+      "description": "Formation intensive en développement web, mobile et logiciel avec mentors experts",
+      "provider": {
+        "@type": "Organization",
+        "name": "Bammite Formation"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "96"
+      }
+    }
+    </script>
+    
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
         rel="stylesheet">
@@ -82,7 +146,7 @@
                     <div class="diagram-tech">
                         <a href="./web-mobile-logiciel.html" class="tech-item">Web</a>
                         <a href="./web-mobile-logiciel.html" class="tech-item">Mobile</a>
-                        <a href="./formation-bureautique.html" class="tech-item">Burotique</a>
+                        <a href="./formation-bureautique.html" class="tech-item">Bureautique</a>
                     </div>
 
                     <div class="diagram-lines">
@@ -838,6 +902,7 @@
                                 if (member.linkedin_url) socialHtml += `<a href="${member.linkedin_url}" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>`;
                                 if (member.github_url) socialHtml += `<a href="${member.github_url}" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>`;
                                 if (member.twitter_url) socialHtml += `<a href="${member.twitter_url}" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>`;
+                                if (member.email) socialHtml += `<a href="mailto:${member.email}" class="social-icon"><i class="fas fa-envelope"></i></a>`;
 
                                 const card = document.createElement('div');
                                 card.className = 'team-card';
